@@ -1,0 +1,272 @@
+{
+  "orgName": "Project Sankalp",
+  "hero": {
+    "title": "Empowering Communities Through Technology & Education",
+    "tagline": "Project Sankalp is a national initiative dedicated to bridging the digital divide, mentoring future leaders, and fostering social innovation through sustainable community projects.",
+    "primaryCta": {
+      "text": "Join as Volunteer",
+      "link": "#get-involved"
+    },
+    "secondaryCta": {
+      "text": "Explore Programs",
+      "link": "#programs"
+    }
+  },
+  "about": {
+    "title": "Who We Are",
+    "subtitle": "Catalyzing social change through tech enablement and skill development.",
+    "description": "Founded in 2021, Project Sankalp has grown from a local mentoring circle into a nationwide network of professionals, student mentors, and social innovators. We believe that technology education and leadership development should be accessible to all, regardless of socio-economic background. By setting up community labs and conducting bootcamps, we are unlocking the digital potential of thousands of individuals.",
+    "mission": "Our mission is to democratize technical knowledge, build sustainable digital infrastructure, and foster local leadership to solve pressing community problems.",
+    "vision": "A self-sustaining, digitally-inclusive society where every individual has the skills and resources to design their own future.",
+    "values": [
+      {
+        "title": "Inclusivity First",
+        "description": "We build pathways for underrepresented communities, ensuring nobody is left behind in the digital age.",
+        "icon": "inclusivity"
+      },
+      {
+        "title": "Sustainable Impact",
+        "description": "We focus on long-term infrastructure, mentorship loops, and self-sustaining community structures.",
+        "icon": "sustainability"
+      },
+      {
+        "title": "Radical Empathy",
+        "description": "Our programs are co-designed directly with local communities to solve their actual, felt needs.",
+        "icon": "empathy"
+      },
+      {
+        "title": "Collaborative Innovation",
+        "description": "We bring together academia, industry leaders, and grassroots advocates to drive holistic change.",
+        "icon": "innovation"
+      }
+    ],
+    "history": [
+      {
+        "year": "2021",
+        "title": "The Spark",
+        "description": "Project Sankalp begins as a peer-to-peer tech mentorship group in response to remote learning challenges, serving 50 children."
+      },
+      {
+        "year": "2022",
+        "title": "Community Labs Initiative",
+        "description": "Launched our first 3 physical Community Digital Labs, equipping them with donated systems and high-speed internet."
+      },
+      {
+        "year": "2023",
+        "title": "Nationwide Expansion",
+        "description": "Expanded to 12 cities, partner with 5 universities, and launch the Technical Leadership Cohort."
+      },
+      {
+        "year": "2024",
+        "title": "Institutional Recognition",
+        "description": "Registered as an independent non-profit, recognized by national social impact councils for our digital literacy programs."
+      },
+      {
+        "year": "2025-2026",
+        "title": "Scaling the Mission",
+        "description": "Aiming to establish 50 labs and empower 20,000+ citizens through advanced coding, design, and digital literacy curricula."
+      }
+    ]
+  },
+  "impact": {
+    "title": "Our Impact in Numbers",
+    "subtitle": "Real numbers driving measurable progress across communities.",
+    "stats": [
+      {
+        "value": "15,000+",
+        "label": "Individuals Mentored",
+        "icon": "users"
+      },
+      {
+        "value": "35+",
+        "label": "Community Labs Active",
+        "icon": "map-pin"
+      },
+      {
+        "value": "120+",
+        "label": "Open Source Projects",
+        "icon": "code"
+      },
+      {
+        "value": "350k+",
+        "label": "Hours of Learning",
+        "icon": "clock"
+      }
+    ],
+    "caseStudies": [
+      {
+        "title": "Bridges to Byte: Digital Literacy in Nari Village",
+        "challenge": "Lack of internet and digital equipment left over 300 youths in Nari village isolated from modern education systems during secondary schooling.",
+        "solution": "Project Sankalp established a community digital lab equipped with 10 solar-powered computer terminals and trained 2 local graduates to run daily literacy classes.",
+        "result": "Within 12 months, 180+ students graduated, 14 secure tech-based remote jobs, and the local secondary school integrated computer science into their core curriculum.",
+        "category": "Education"
+      },
+      {
+        "title": "Krishi-Tech: Empowing Rural Farmers with IoT Data",
+        "challenge": "Frequent crop failures due to unpredictable water table fluctuations and lack of affordable soil moisture monitoring tools.",
+        "solution": "Collaborated with tech university students to build low-cost IoT soil monitors. Conducted hands-on tech workshops for 40 local farming families to help them read dashboard metrics.",
+        "result": "Reduced water waste by 35%, increased overall crop yield by 20% in the first harvest, and trained 5 youth technicians for device maintenance.",
+        "category": "Agriculture Tech"
+      }
+    ]
+  },
+  "programs": {
+    "title": "Ongoing Programs & Initiatives",
+    "subtitle": "Designed to empower, educate, and build long-term digital independence.",
+    "list": [
+      {
+        "id": "digital-literacy",
+        "title": "Sankalp Digital Literacy Academy",
+        "description": "Bringing fundamental computer science skills, internet navigation, and safety training to school children and adults in remote regions.",
+        "category": "Education",
+        "ctaText": "Volunteer to Teach",
+        "ctaLink": "#get-involved",
+        "icon": "book-open"
+      },
+      {
+        "id": "tech-mentorship",
+        "title": "Tech Mentorship & Career Accelerator",
+        "description": "Connecting industry software engineers and designers with underprivileged college students for structured 1-on-1 mentorship, resume reviews, and portfolio development.",
+        "category": "Career Growth",
+        "ctaText": "Apply as Mentor/Mentee",
+        "ctaLink": "#get-involved",
+        "icon": "users-group"
+      },
+      {
+        "id": "community-labs",
+        "title": "Sankalp Smart Lab Setup",
+        "description": "Sourcing donated hardware, setting up physical computer labs in community centers, and supplying solar setups for continuous access.",
+        "category": "Infrastructure",
+        "ctaText": "Donate Hardware",
+        "ctaLink": "#get-involved",
+        "icon": "server"
+      },
+      {
+        "id": "sankalp-fellows",
+        "title": "Community Social Tech Fellows",
+        "description": "A 6-month stipend-backed fellowship for young developers to build open-source local solutions, including tracking health diagnostics and local business marketplaces.",
+        "category": "Innovation",
+        "ctaText": "Apply for Fellowship",
+        "ctaLink": "#get-involved",
+        "icon": "award"
+      }
+    ]
+  },
+  "team": {
+    "title": "Meet the Team",
+    "subtitle": "The passionate innovators, mentors, and advocates behind Project Sankalp.",
+    "members": [
+      {
+        "name": "Dr. Ananya Iyer",
+        "role": "Founder & Executive Director",
+        "bio": "Former social entrepreneur and tech policy researcher. Ananya has over 15 years of experience building tech-for-good initiatives and holds a Ph.D. in Community Informatics.",
+        "image": "/organization/ananya-iyer.jpg",
+        "email": "ananya@projectsankalp.org",
+        "linkedin": "https://linkedin.com/in/placeholder"
+      },
+      {
+        "name": "Vikram Rathore",
+        "role": "Director of Programs & Partnerships",
+        "bio": "Operations veteran who spent a decade coordinating global scaling initiatives at top software firms before shifting full-time to build Project Sankalp's mentorship network.",
+        "image": "/organization/vikram-rathore.jpg",
+        "email": "vikram@projectsankalp.org",
+        "linkedin": "https://linkedin.com/in/placeholder"
+      },
+      {
+        "name": "Sarah D'Souza",
+        "role": "Head of Community Infrastructure",
+        "bio": "Systems engineer specializing in off-grid power and local-first networking. Sarah leads our smart lab setups, ensuring stable systems in solar-only rural areas.",
+        "image": "/organization/sarah-dsouza.jpg",
+        "email": "sarah@projectsankalp.org",
+        "linkedin": "https://linkedin.com/in/placeholder"
+      },
+      {
+        "name": "Dinesh Kumar",
+        "role": "Lead Curriculum Designer & Mentor",
+        "bio": "Experienced educator and full-stack software developer. Dinesh writes our responsive, accessible learning modules and oversees tech mentor training.",
+        "image": "/organization/dinesh-kumar.jpg",
+        "email": "dinesh@projectsankalp.org",
+        "linkedin": "https://linkedin.com/in/placeholder"
+      }
+    ]
+  },
+  "partners": {
+    "title": "Our Trusted Partners & Supporters",
+    "subtitle": "Enabling our vision through hardware, funding, and operational support.",
+    "list": [
+      {
+        "name": "EcoGrid Energy Systems",
+        "description": "Provides solar panels and battery storage units for our rural Smart Labs.",
+        "logoType": "ecogrid"
+      },
+      {
+        "name": "Apex University",
+        "description": "Collaborates on student mentorship and volunteer recruitment credits.",
+        "logoType": "apex"
+      },
+      {
+        "name": "Veloce Technologies",
+        "description": "Donates laptops, monitors, and networking hardware for our labs.",
+        "logoType": "veloce"
+      },
+      {
+        "name": "Impact Foundation",
+        "description": "Funder of our Community Social Tech Fellowship program.",
+        "logoType": "impact"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Stories from the Ground",
+    "subtitle": "A glimpse into our labs, interactive workshops, and hackathons.",
+    "stories": [
+      {
+        "title": "Inaugurating Smart Lab 24",
+        "description": "Members of Nari village and our volunteer team celebrate the launch of the new community hub.",
+        "category": "Lab Openings",
+        "imageUrl": "/organization/gallery-lab.jpg"
+      },
+      {
+        "title": "Mentorship Meetup 2025",
+        "description": "Connecting 50 industry mentors with college graduates for intensive review sessions and guidance.",
+        "category": "Mentorship",
+        "imageUrl": "/organization/gallery-mentorship.jpg"
+      },
+      {
+        "title": "Sankalp Hack-For-Good",
+        "description": "Local youth building responsive tools for crop water tracking during our summer tech camps.",
+        "category": "Workshops",
+        "imageUrl": "/organization/gallery-hackathon.jpg"
+      },
+      {
+        "title": "First Digital Graduate",
+        "description": "Rohan proudly holds his course completion certificate in modern systems administration.",
+        "category": "Graduation",
+        "imageUrl": "/organization/gallery-graduation.jpg"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Project Sankalp gave me more than computer skills. It connected me to mentors who helped me polish my resume and secure a software engineering internship.",
+      "author": "Priya Sharma",
+      "info": "Student & 2024 Sankalp Fellow"
+    },
+    {
+      "quote": "Running solar-powered digital labs in off-grid rural schools seemed impossible until Sankalp's technical team came and installed self-reliant local network boxes.",
+      "author": "Principal Jacob Thomas",
+      "info": "Nari High School"
+    }
+  ],
+  "contact": {
+    "email": "info@projectsankalp.org",
+    "phone": "+91 80 4321 0987",
+    "address": "402, 4th Floor, Social Impact Hub, Residency Road, Bengaluru, Karnataka, India - 560025",
+    "socials": {
+      "twitter": "https://twitter.com/projectsankalp",
+      "linkedin": "https://linkedin.com/company/projectsankalp",
+      "github": "https://github.com/projectsankalp",
+      "instagram": "https://instagram.com/projectsankalp"
+    }
+  }
+}
