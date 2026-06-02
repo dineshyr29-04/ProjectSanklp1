@@ -14,15 +14,15 @@ export default function PartnersPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#05160c] py-16 sm:py-24">
+      <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Collaborators</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 mt-2 mb-4">
+            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Collaborators</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
               {title}
             </h1>
-            <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300">
+            <p className="text-sm font-sans text-slate-500 dark:text-slate-400">
               {subtitle}
             </p>
           </div>
@@ -32,22 +32,26 @@ export default function PartnersPage() {
             {list.map((partner, index) => (
               <div 
                 key={index}
-                className="border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow"
+                className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/30 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
               >
-                {/* Logo Representation: Rounded Pill Tag, No Hard Borders */}
-                <div className="bg-emerald-50/20 dark:bg-[#062e15]/20 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
-                  <div className="px-5 py-2.5 bg-white dark:bg-zinc-950 text-emerald-800 dark:text-emerald-400 border border-emerald-200 dark:border-[#0f766e]/35 rounded-full font-mono text-sm font-black tracking-tight shadow-xs">
-                    {partner.name}
+                <div>
+                  {/* Logo Representation */}
+                  <div className="bg-slate-50/50 dark:bg-slate-900/30 p-8 flex items-center justify-center text-center select-none min-h-[140px] border-b border-slate-100 dark:border-slate-850">
+                    <div className="px-5 py-2.5 bg-white dark:bg-[#0f172a] text-slate-900 dark:text-[#10b981] border border-slate-150 dark:border-slate-800 rounded-full font-sans font-black tracking-tight shadow-xs">
+                      {partner.name}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="p-6">
+                    <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed">
+                      {partner.description}
+                    </p>
                   </div>
                 </div>
 
-                {/* Description */}
-                <div className="p-6">
-                  <p className="text-sm text-emerald-900/90 dark:text-emerald-300 leading-relaxed mb-6">
-                    {partner.description}
-                  </p>
-                  
-                  <div className="border-t border-emerald-100 dark:border-emerald-950/20 pt-4 text-[10px] font-bold text-emerald-600">
+                <div className="p-6 pt-0">
+                  <div className="border-t border-slate-100 dark:border-slate-850 pt-4 text-[10px] font-sans font-bold text-[#10b981]">
                     Partner Record: Active
                   </div>
                 </div>
@@ -56,15 +60,15 @@ export default function PartnersPage() {
           </div>
 
           {/* Sponsorship Statement Card */}
-          <div className="border border-emerald-150 dark:border-[#0f766e]/30 p-8 sm:p-12 rounded-3xl bg-emerald-50/15 dark:bg-[#062210] max-w-3xl mx-auto text-center shadow-xs">
-            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Sponsorship Intake</span>
-            <h3 className="text-2xl font-black text-emerald-900 dark:text-emerald-100 uppercase mt-3 mb-4">Become an Institutional Partner</h3>
-            <p className="text-sm text-emerald-900/80 dark:text-emerald-300 leading-relaxed mb-6">
+          <div className="border border-slate-100 dark:border-slate-800 p-8 sm:p-12 rounded-3xl bg-slate-50/50 dark:bg-slate-900/20 max-w-3xl mx-auto text-center shadow-xs">
+            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Sponsorship Intake</span>
+            <h3 className="text-2xl font-serif font-black text-slate-900 dark:text-white mt-3 mb-4">Become an Institutional Partner</h3>
+            <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed mb-6">
               We seek donations of retired enterprise laptop hardware, solar inverter panels, and server cabinets. Align your Corporate Social Responsibility (CSR) targets with real, local tech literacy outcomes.
             </p>
             <a
               href="mailto:info@projectsankalp.org?subject=CSR Partnership Inquiry"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold tracking-wider uppercase text-white bg-emerald-700 hover:bg-emerald-600 rounded-full transition-all duration-200 shadow-xs"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-450 dark:text-slate-950 rounded-full transition-all duration-200 shadow-xs"
             >
               Connect with CSR Desk
             </a>

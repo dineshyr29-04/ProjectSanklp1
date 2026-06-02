@@ -13,36 +13,36 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#05160c]">
+      <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a]">
         {/* Hero Section */}
         <Hero />
 
         {/* Core Mission & Vision */}
-        <section className="py-16 sm:py-24 border-t border-emerald-50 dark:border-emerald-950/20">
+        <section className="py-16 sm:py-24 border-t border-slate-100 dark:border-slate-800/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Mission Box */}
-              <div className="border border-emerald-100 dark:border-[#0f766e]/30 p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#062210] shadow-xs">
-                <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-350 mb-4">
+              <div className="border border-slate-100 dark:border-slate-800/80 p-8 sm:p-10 rounded-3xl bg-[#f8fafc] dark:bg-slate-900/30 shadow-xs">
+                <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full mb-4">
                   Our Mission
                 </div>
-                <h2 className="text-2xl font-black text-emerald-950 dark:text-emerald-100 mb-4">
+                <h2 className="text-2xl font-serif font-black text-slate-900 dark:text-white mb-4">
                   Democratizing Tech & Education
                 </h2>
-                <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300 leading-relaxed">
+                <p className="text-sm sm:text-base font-sans text-slate-600 dark:text-slate-300 leading-relaxed">
                   {mission}
                 </p>
               </div>
 
               {/* Vision Box */}
-              <div className="border border-[#86efac]/30 dark:border-[#0f766e]/30 p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#062210] shadow-xs">
-                <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-350 mb-4">
+              <div className="border border-slate-100 dark:border-slate-800/80 p-8 sm:p-10 rounded-3xl bg-[#f8fafc] dark:bg-slate-900/30 shadow-xs">
+                <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full mb-4">
                   Our Vision
                 </div>
-                <h2 className="text-2xl font-black text-emerald-950 dark:text-emerald-100 mb-4">
+                <h2 className="text-2xl font-serif font-black text-slate-900 dark:text-white mb-4">
                   A Digitally Inclusive Future
                 </h2>
-                <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300 leading-relaxed">
+                <p className="text-sm sm:text-base font-sans text-slate-600 dark:text-slate-300 leading-relaxed">
                   {vision}
                 </p>
               </div>
@@ -51,66 +51,66 @@ export default function Home() {
         </section>
 
         {/* Explore Subpages Shortcuts */}
-        <section className="py-16 sm:py-24 bg-emerald-50/20 dark:bg-zinc-950/20 border-t border-b border-emerald-50 dark:border-emerald-950/20">
+        <section className="py-16 sm:py-24 bg-slate-50/50 dark:bg-slate-900/20 border-t border-b border-slate-100 dark:border-slate-800/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Browse Directory</span>
-              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 mt-3">Explore the Project</h2>
+              <span className="inline-block px-3 py-1 bg-[#f8fafc] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-xs font-sans font-bold text-slate-600 dark:text-slate-300 rounded-full">Browse Directory</span>
+              <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-3">Explore the Project</h2>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Event link */}
-              <Link href="/events" className="group border border-emerald-100 hover:border-emerald-400 dark:border-[#0f766e]/30 dark:hover:border-emerald-500 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
+              <Link href="/events" className="group border border-slate-150 hover:border-[#10b981] dark:border-slate-800 dark:hover:border-[#10b981] p-8 rounded-3xl bg-white dark:bg-[#0f172a] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
                 <div>
-                  <span className="text-xs font-bold text-emerald-500 block mb-3">01 // Directory</span>
-                  <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">EVENTS</h3>
-                  <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed">
+                  <span className="text-xs font-sans font-bold text-slate-400 block mb-3">01 // Directory</span>
+                  <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">EVENTS</h3>
+                  <p className="text-xs font-sans text-slate-600 dark:text-slate-405 leading-relaxed">
                     Check out all our past and upcoming community workshops, smart lab launches, and timeline milestones.
                   </p>
                 </div>
-                <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors mt-8">
+                <div className="text-xs font-sans font-bold text-[#10b981] group-hover:text-emerald-600 transition-colors mt-8">
                   View Events →
                 </div>
               </Link>
 
               {/* Members link */}
-              <Link href="/members" className="group border border-emerald-100 hover:border-emerald-400 dark:border-[#0f766e]/30 dark:hover:border-emerald-500 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
+              <Link href="/members" className="group border border-slate-150 hover:border-[#10b981] dark:border-slate-800 dark:hover:border-[#10b981] p-8 rounded-3xl bg-white dark:bg-[#0f172a] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
                 <div>
-                  <span className="text-xs font-bold text-emerald-500 block mb-3">02 // Directory</span>
-                  <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">MEMBERS</h3>
-                  <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed">
+                  <span className="text-xs font-sans font-bold text-slate-400 block mb-3">02 // Directory</span>
+                  <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">MEMBERS</h3>
+                  <p className="text-xs font-sans text-slate-600 dark:text-slate-405 leading-relaxed">
                     Read cohort testimonials, see volunteer activities, and submit your membership application.
                   </p>
                 </div>
-                <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors mt-8">
+                <div className="text-xs font-sans font-bold text-[#10b981] group-hover:text-emerald-600 transition-colors mt-8">
                   Volunteer Now →
                 </div>
               </Link>
 
               {/* Partners link */}
-              <Link href="/partners" className="group border border-emerald-100 hover:border-emerald-400 dark:border-[#0f766e]/30 dark:hover:border-emerald-500 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
+              <Link href="/partners" className="group border border-slate-150 hover:border-[#10b981] dark:border-slate-800 dark:hover:border-[#10b981] p-8 rounded-3xl bg-white dark:bg-[#0f172a] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
                 <div>
-                  <span className="text-xs font-bold text-emerald-500 block mb-3">03 // Directory</span>
-                  <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">PARTNERS</h3>
-                  <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed">
+                  <span className="text-xs font-sans font-bold text-slate-400 block mb-3">03 // Directory</span>
+                  <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">PARTNERS</h3>
+                  <p className="text-xs font-sans text-slate-600 dark:text-slate-405 leading-relaxed">
                     Meet the organizations donating hardware, infrastructure, and operational support to scale our smart labs.
                   </p>
                 </div>
-                <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors mt-8">
+                <div className="text-xs font-sans font-bold text-[#10b981] group-hover:text-emerald-600 transition-colors mt-8">
                   Our Sponsors →
                 </div>
               </Link>
 
               {/* Core Team link */}
-              <Link href="/core-team" className="group border border-emerald-100 hover:border-emerald-400 dark:border-[#0f766e]/30 dark:hover:border-emerald-500 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
+              <Link href="/core-team" className="group border border-slate-150 hover:border-[#10b981] dark:border-slate-800 dark:hover:border-[#10b981] p-8 rounded-3xl bg-white dark:bg-[#0f172a] flex flex-col justify-between transition-all duration-200 hover:shadow-md">
                 <div>
-                  <span className="text-xs font-bold text-emerald-500 block mb-3">04 // Directory</span>
-                  <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">CORE TEAM</h3>
-                  <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed">
+                  <span className="text-xs font-sans font-bold text-slate-400 block mb-3">04 // Directory</span>
+                  <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">CORE TEAM</h3>
+                  <p className="text-xs font-sans text-slate-600 dark:text-slate-405 leading-relaxed">
                     Get in touch with the founders, curriculum designers, and community coordinators leading Project Sankalp.
                   </p>
                 </div>
-                <div className="text-xs font-bold text-emerald-700 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors mt-8">
+                <div className="text-xs font-sans font-bold text-[#10b981] group-hover:text-emerald-600 transition-colors mt-8">
                   Meet Leaders →
                 </div>
               </Link>
@@ -122,29 +122,29 @@ export default function Home() {
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">What We Run</span>
-              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 mt-3">Active Initiatives</h2>
+              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">What We Run</span>
+              <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-3">Active Initiatives</h2>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-8">
               {programsList.map((program) => (
-                <div key={program.id} className="border border-emerald-100 dark:border-[#0f766e]/30 p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between shadow-xs">
+                <div key={program.id} className="border border-slate-100 dark:border-slate-800/80 p-8 sm:p-10 rounded-3xl bg-white dark:bg-slate-900/30 flex flex-col justify-between shadow-xs">
                   <div>
-                    <div className="flex items-center justify-between mb-4 pb-2 border-b border-emerald-100/35">
-                      <span className="text-xs font-bold text-emerald-500">
+                    <div className="flex items-center justify-between mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">
+                      <span className="text-xs font-sans font-bold text-[#10b981]">
                         {program.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-black text-emerald-900 dark:text-emerald-100 mb-3">
+                    <h3 className="text-xl font-serif font-black text-slate-900 dark:text-white mb-3">
                       {program.title}
                     </h3>
-                    <p className="text-sm text-emerald-900/80 dark:text-emerald-350 leading-relaxed mb-6">
+                    <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed mb-6">
                       {program.description}
                     </p>
                   </div>
                   <Link
                     href="/members"
-                    className="inline-flex items-center justify-center px-6 py-2.5 text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 hover:bg-[#10b981] hover:text-white rounded-full transition-colors w-full sm:w-auto text-center"
+                    className="inline-flex items-center justify-center px-6 py-2.5 text-xs font-sans font-bold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-[#10b981] dark:bg-slate-800 dark:hover:bg-[#10b981] dark:hover:text-slate-950 hover:text-white rounded-full transition-colors w-full sm:w-auto text-center shadow-xs"
                   >
                     {program.ctaText} →
                   </Link>
@@ -155,23 +155,23 @@ export default function Home() {
         </section>
 
         {/* Core Values */}
-        <section className="py-16 sm:py-24 bg-emerald-50/10 dark:bg-zinc-950/10 border-t border-b border-emerald-50 dark:border-emerald-950/20">
+        <section className="py-16 sm:py-24 bg-slate-50/50 dark:bg-slate-900/10 border-t border-b border-slate-100 dark:border-slate-800/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">How We Work</span>
-              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 mt-3">Our Core Values</h2>
+              <span className="inline-block px-3 py-1 bg-[#f8fafc] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-xs font-sans font-bold text-slate-600 dark:text-slate-300 rounded-full">How We Work</span>
+              <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-3">Our Core Values</h2>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((val, idx) => (
-                <div key={idx} className="border border-emerald-100 dark:border-[#0f766e]/20 p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#062210] text-left">
-                  <div className="text-xs font-bold text-emerald-500 mb-3">
+                <div key={idx} className="border border-slate-100 dark:border-slate-800/60 p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900/30 text-left">
+                  <div className="text-xs font-sans font-bold text-[#10b981] mb-3">
                     0{idx + 1} // Value
                   </div>
-                  <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">
+                  <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">
                     {val.title}
                   </h3>
-                  <p className="text-xs text-emerald-900/80 dark:text-emerald-355 leading-relaxed">
+                  <p className="text-xs font-sans text-slate-500 dark:text-slate-400 leading-relaxed">
                     {val.description}
                   </p>
                 </div>
@@ -184,21 +184,21 @@ export default function Home() {
         <section className="py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">In Their Words</span>
-              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 mt-3">Community Feedback</h2>
+              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">In Their Words</span>
+              <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-3">Community Feedback</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {testimonials.map((t, idx) => (
-                <div key={idx} className="border border-emerald-100 dark:border-[#0f766e]/30 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between shadow-xs">
-                  <p className="text-sm italic text-emerald-900 dark:text-emerald-200 leading-relaxed mb-6">
+                <div key={idx} className="border border-slate-100 dark:border-slate-800/80 p-8 rounded-3xl bg-white dark:bg-slate-900/30 flex flex-col justify-between shadow-xs">
+                  <p className="text-sm italic font-sans text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                     “{t.quote}”
                   </p>
                   <div>
-                    <p className="text-sm font-bold text-emerald-800 dark:text-emerald-450">
+                    <p className="text-sm font-sans font-bold text-slate-900 dark:text-white">
                       {t.author}
                     </p>
-                    <p className="text-xs text-emerald-900/60 dark:text-emerald-400/60 font-mono">
+                    <p className="text-xs font-sans text-slate-500 dark:text-slate-400">
                       {t.info}
                     </p>
                   </div>
