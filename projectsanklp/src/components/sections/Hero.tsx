@@ -51,24 +51,8 @@ export default function Hero() {
 
         {/* NSS-Aligned badge */}
         <div className="mb-7 sm:mb-9">
-          <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border font-sans font-bold text-white"
-            style={{
-              borderColor: "rgba(245,158,11,0.70)",
-              backgroundColor: "rgba(245,158,11,0.14)",
-              fontSize: "0.6875rem",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-            }}
-          >
-            {/* Dot */}
-            <span
-              className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-              style={{ backgroundColor: "#F59E0B" }}
-              aria-hidden="true"
-            />
-            NSS-Aligned Student Organization
-          </span>
+          
+           
         </div>
 
         {/* Large wordmark heading */}
