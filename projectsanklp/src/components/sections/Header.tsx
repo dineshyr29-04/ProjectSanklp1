@@ -10,9 +10,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 16);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -28,41 +28,54 @@ export default function Header() {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-100 dark:border-[#1e293b] shadow-xs"
-          : "bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xs border-b border-slate-50 dark:border-[#1e293b]/50"
+          ? "bg-white/98 backdrop-blur-md shadow-sm border-b border-slate-100"
+          : "bg-white/95 border-b border-transparent"
       }`}
+      role="banner"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
+          {/* Logo / Wordmark */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-xl sm:text-2xl font-serif font-black tracking-tight text-black focus:outline-none hover:text-[color:var(--accent)] transition-colors"
-              aria-label={`${siteConfig.orgName} Home`}
+              className="font-serif font-black text-[#0F172A] hover:opacity-80 transition-opacity focus:outline-none"
+              style={{
+                fontSize: "clamp(1.1rem, 2vw, 1.375rem)",
+                letterSpacing: "-0.02em",
+                textDecoration: "none",
+              }}
+              aria-label={`${siteConfig.orgName} — Return to homepage`}
             >
               {siteConfig.orgName}
             </Link>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-6" aria-label="Main Navigation">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1" aria-label="Primary Navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-sans font-bold text-slate-600 hover:text-[color:var(--accent)] transition-colors duration-200 focus:outline-none px-2 py-1"
+                className="px-3 py-2 font-sans font-semibold text-slate-600 hover:text-[#0F172A] transition-colors rounded-md hover:bg-slate-50 focus:outline-none"
+                style={{ fontSize: "0.875rem", textDecoration: "none" }}
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          {/* Action CTA */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
             <Link
               href="/members"
-              className="inline-flex items-center justify-center px-5 py-2 text-xs font-sans font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-full shadow-sm hover:shadow transition-all duration-200"
+              id="header-join-cta"
+              className="inline-flex items-center justify-center px-5 py-2.5 font-sans font-bold text-white rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5 focus:outline-none"
+              style={{
+                backgroundColor: "#0F172A",
+                fontSize: "0.8125rem",
+                textDecoration: "none",
+              }}
             >
               Join Us
             </Link>
@@ -73,19 +86,11 @@ export default function Header() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center focus:outline-none"
+              className="px-4 py-2 font-sans font-bold text-[#0F172A] border border-slate-200 rounded-md text-xs bg-white hover:bg-slate-50 transition-colors focus:outline-none"
               aria-expanded={isOpen}
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? (
-                <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
-                  Close Menu
-                </span>
-              ) : (
-                <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
-                  Menu
-                </span>
-              )}
+              {isOpen ? "Close" : "Menu"}
             </button>
           </div>
         </div>
@@ -93,53 +98,63 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-xs transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
+        aria-hidden={!isOpen}
       >
-          <div
-          className={`fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white border-l border-slate-100 p-6 shadow-2xl transition-transform duration-300 ease-in-out ${
+        <div
+          className={`fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-lg font-serif font-black text-black">
+          {/* Drawer header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+            <span
+              className="font-serif font-black text-[#0F172A]"
+              style={{ fontSize: "1.125rem", letterSpacing: "-0.02em" }}
+            >
               {siteConfig.orgName}
             </span>
             <button
               onClick={() => setIsOpen(false)}
-              className="focus:outline-none"
+              className="font-sans text-xs font-bold text-slate-500 hover:text-[#0F172A] px-3 py-1.5 border border-slate-200 rounded-md focus:outline-none"
               aria-label="Close menu"
             >
-              <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
-                Close
-              </span>
+              Close
             </button>
           </div>
-          <nav className="flex flex-col space-y-4" aria-label="Mobile Navigation">
+
+          {/* Drawer nav */}
+          <nav className="flex flex-col px-6 py-6 space-y-1 flex-1" aria-label="Mobile Navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-base font-sans font-bold text-slate-700 hover:text-[color:var(--accent)] transition-colors py-2 block border-b border-slate-50"
+                className="font-sans font-semibold text-slate-700 hover:text-[#0F172A] hover:bg-slate-50 transition-colors py-3 px-3 rounded-md block"
+                style={{ fontSize: "0.9375rem", textDecoration: "none" }}
               >
                 {link.name}
               </Link>
             ))}
+          </nav>
+
+          {/* Drawer CTA */}
+          <div className="px-6 pb-8">
             <Link
               href="/members"
               onClick={() => setIsOpen(false)}
-              className="mt-6 w-full inline-flex items-center justify-center px-4 py-3 text-base font-sans font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-colors duration-200"
+              className="w-full inline-flex items-center justify-center px-4 py-3.5 font-sans font-bold text-white rounded-md transition-colors focus:outline-none"
+              style={{ backgroundColor: "#0F172A", fontSize: "0.9375rem", textDecoration: "none" }}
             >
               Join as Volunteer
             </Link>
-          </nav>
+          </div>
         </div>
       </div>
     </header>
   );
 }
-

@@ -26,6 +26,24 @@ export interface CaseStudyItem {
   category: string;
 }
 
+export interface InitiativeItem {
+  id: string;
+  title: string;
+  description: string;
+  impact: string;
+  image: string;
+  category: string;
+}
+
+export interface EventItem {
+  id: string;
+  date: string;
+  category: string;
+  title: string;
+  description: string;
+  location: string;
+}
+
 export interface ProgramItem {
   id: string;
   title: string;
@@ -62,6 +80,7 @@ export interface TestimonialItem {
   quote: string;
   author: string;
   info: string;
+  initials?: string;
 }
 
 export interface OrgContent {
@@ -87,6 +106,8 @@ export interface OrgContent {
     stats: StatItem[];
     caseStudies: CaseStudyItem[];
   };
+  initiatives: InitiativeItem[];
+  events: EventItem[];
   programs: {
     title: string;
     subtitle: string;

@@ -6,102 +6,201 @@ import { siteConfig } from "../../config/org";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { contact } = siteConfig;
 
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Events & Activities", href: "/events" },
+    { name: "Members & Volunteers", href: "/members" },
+    { name: "Our Partners", href: "/partners" },
+    { name: "Core Leadership", href: "/core-team" },
+  ];
+
+  const socialLinks = [
+    {
+      name: "Instagram",
+      href: contact.socials.instagram,
+      icon: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      ),
+    },
+    {
+      name: "LinkedIn",
+      href: contact.socials.linkedin,
+      icon: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Twitter / X",
+      href: contact.socials.twitter,
+      icon: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      ),
+    },
+    {
+      name: "GitHub",
+      href: contact.socials.github,
+      icon: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
-    <footer className="bg-white text-slate-700 border-t border-slate-100 pt-16 pb-8 relative z-10" aria-label="Site Footer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-          {/* Brand Summary (Col 1-5) */}
-          <div className="md:col-span-5 space-y-4">
+    <footer className="bg-[#0F172A] text-white" aria-label="Site Footer">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-8">
+        {/* Main footer grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
+          {/* Brand column */}
+          <div className="lg:col-span-5">
             <Link
               href="/"
-              className="text-xl font-serif font-black tracking-tight text-black focus:outline-none hover:text-[color:var(--accent)] transition-colors"
+              className="font-serif font-black text-white hover:opacity-80 transition-opacity"
+              style={{ fontSize: "1.375rem", letterSpacing: "-0.02em", textDecoration: "none" }}
               aria-label={`${siteConfig.orgName} Home`}
             >
               {siteConfig.orgName}
             </Link>
-            <p className="text-sm font-sans text-slate-600 leading-relaxed max-w-sm">
-              Project Sankalp is a registered Section 8 non-profit organization dedicated to digital inclusion, technology mentorship, and grassroots social innovations.
+
+            <p
+              className="font-sans mt-4 mb-6"
+              style={{ color: "#94A3B8", fontSize: "0.9375rem", lineHeight: 1.75, maxWidth: "22rem" }}
+            >
+              A student-led social impact organization aligned with the National Service Scheme, dedicated to education, leadership, and community service.
             </p>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="flex items-center justify-center w-9 h-9 rounded-md transition-colors hover:bg-white/10"
+                  style={{ color: "#64748B" }}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Quick Links (Col 6-8) */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-sm font-serif font-black text-black uppercase tracking-wider">Quick Navigation</h4>
-            <nav className="flex flex-col space-y-2.5 text-sm font-sans font-semibold" aria-label="Footer Navigation">
-              <Link href="/" className="hover:text-[color:var(--accent)] hover:underline transition-colors focus:outline-none">
-                Home
-              </Link>
-              <Link href="/events" className="hover:text-[color:var(--accent)] hover:underline transition-colors focus:outline-none">
-                Events & Timeline
-              </Link>
-              <Link href="/members" className="hover:text-[color:var(--accent)] hover:underline transition-colors focus:outline-none">
-                Members & Volunteer
-              </Link>
-              <Link href="/partners" className="hover:text-[color:var(--accent)] hover:underline transition-colors focus:outline-none">
-                Our Partners
-              </Link>
-              <Link href="/core-team" className="hover:text-[color:var(--accent)] hover:underline transition-colors focus:outline-none">
-                Core Leadership Team
-              </Link>
+          {/* Quick links */}
+          <div className="lg:col-span-3">
+            <h4
+              className="font-sans font-bold uppercase tracking-wider mb-5 text-white"
+              style={{ fontSize: "0.6875rem", letterSpacing: "0.12em" }}
+            >
+              Quick Links
+            </h4>
+            <nav className="flex flex-col space-y-3" aria-label="Footer Navigation">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="font-sans font-medium hover:text-white transition-colors"
+                  style={{ color: "#94A3B8", fontSize: "0.9375rem", textDecoration: "none" }}
+                >
+                  {link.name}
+                </Link>
+              ))}
             </nav>
           </div>
 
-          {/* Contact Summary (Col 9-12) */}
-          <div className="md:col-span-4 space-y-4">
-            <h4 className="text-sm font-serif font-black text-black uppercase tracking-wider">Get in Touch</h4>
-            <div className="space-y-2.5 text-sm font-sans">
-              <p>
-                <span className="font-bold text-slate-800">Email:</span>{" "}
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[color:var(--accent)] hover:underline transition-colors">
-                  {siteConfig.contact.email}
+          {/* Contact */}
+          <div className="lg:col-span-4">
+            <h4
+              className="font-sans font-bold uppercase tracking-wider mb-5 text-white"
+              style={{ fontSize: "0.6875rem", letterSpacing: "0.12em" }}
+            >
+              Get in Touch
+            </h4>
+            <div className="space-y-4 font-sans" style={{ color: "#94A3B8", fontSize: "0.9375rem" }}>
+              <div>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "var(--accent)", textDecoration: "none" }}
+                >
+                  {contact.email}
                 </a>
-              </p>
-              <p>
-                <span className="font-bold text-slate-800">Phone:</span>{" "}
-                <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-[color:var(--accent)] hover:underline transition-colors">
-                  {siteConfig.contact.phone}
+              </div>
+              <div>
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="hover:text-white transition-colors"
+                  style={{ textDecoration: "none", color: "#94A3B8" }}
+                >
+                  {contact.phone}
                 </a>
-              </p>
-              <p className="leading-relaxed text-slate-500 dark:text-slate-400">
-                <span className="font-bold text-slate-850 dark:text-slate-250">Address:</span>{" "}
-                {siteConfig.contact.address}
+              </div>
+              <p style={{ lineHeight: 1.7 }}>
+                {contact.address}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-xs font-sans text-slate-500">
+        {/* Bottom bar */}
+        <div
+          className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderColor: "#1E293B" }}
+        >
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 font-sans" style={{ color: "#475569", fontSize: "0.8125rem" }}>
             <p>© {currentYear} {siteConfig.orgName}. All rights reserved.</p>
             <div className="flex gap-4">
-              <Link href="/privacy" className="hover:text-[color:var(--accent)] transition-colors focus:outline-none">
+              <Link
+                href="/privacy"
+                className="hover:text-white transition-colors"
+                style={{ textDecoration: "none", color: "#475569" }}
+              >
                 Privacy Policy
               </Link>
-              <span className="text-slate-300" aria-hidden="true">|</span>
-              <Link href="/privacy#terms" className="hover:text-[color:var(--accent)] transition-colors focus:outline-none">
+              <span style={{ color: "#2D3748" }} aria-hidden="true">|</span>
+              <Link
+                href="/privacy#terms"
+                className="hover:text-white transition-colors"
+                style={{ textDecoration: "none", color: "#475569" }}
+              >
                 Terms of Service
               </Link>
             </div>
           </div>
 
-          {/* Scroll to Top */}
           <button
             onClick={handleBackToTop}
             type="button"
-            className="inline-flex items-center justify-center px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full transition-all focus:outline-none cursor-pointer text-xs font-sans font-bold shadow-xs"
+            className="font-sans font-semibold border rounded-md px-5 py-2 transition-colors hover:bg-white/10 focus:outline-none"
+            style={{
+              color: "#64748B",
+              borderColor: "#1E293B",
+              fontSize: "0.8125rem",
+              backgroundColor: "transparent",
+              cursor: "pointer",
+            }}
             aria-label="Scroll back to top"
           >
-            Back to Top ^
+            Back to top ↑
           </button>
         </div>
       </div>
     </footer>
   );
 }
-

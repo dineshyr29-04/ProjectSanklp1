@@ -1,225 +1,106 @@
-"use client";
+import React from "react";
+import { siteConfig } from "../../config/org";
 
-import React, { useState, useEffect, useRef } from "react";
-import { siteConfig, TeamMember } from "../../config/org";
-import { Linkedin, X } from "../ui/Icons";
+const avatarColors = ["#0F172A", "#1E3A5F", "#10B981", "#0F4C3A"];
+
+function getInitials(name: string): string {
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
 
 export default function Team() {
   const { title, subtitle, members } = siteConfig.team;
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
-  const previousFocus = useRef<HTMLElement | null>(null);
-
-  // Handle ESC key to close modal
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedMember(null);
-        if (previousFocus.current) {
-          previousFocus.current.focus();
-        }
-      }
-    };
-    if (selectedMember) {
-      window.addEventListener("keydown", handleKeyDown);
-      // Save last active element for keyboard navigation restoration
-      previousFocus.current = document.activeElement as HTMLElement;
-      // Focus the modal
-      setTimeout(() => {
-        modalRef.current?.focus();
-      }, 50);
-    }
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedMember]);
-
-  const openModal = (member: TeamMember) => {
-    setSelectedMember(member);
-  };
-
-  const closeModal = () => {
-    setSelectedMember(null);
-    if (previousFocus.current) {
-      previousFocus.current.focus();
-    }
-  };
-
-  // Generate initials for avatar placeholder
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .toUpperCase();
-  };
-
-  // Generate unique gradient color based on name length/letters
-  const getGradient = (name: string) => {
-    const a = "[color:var(--accent)]";
-    const gradients = [
-      `from-${a}/10 to-${a}/30`,
-      `from-${a}/5 to-zinc-600`,
-      `from-${a}/10 to-zinc-700`,
-      `from-${a}/15 to-${a}/35`,
-    ];
-    const index = name.length % gradients.length;
-    return gradients[index];
-  };
 
   return (
-    <section id="team" className="py-24 sm:py-32 relative overflow-hidden bg-white dark:bg-black">
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[color:var(--accent)]/10 rounded-full blur-[110px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-[color:var(--accent)] mb-3">
-            Our Leadership
-          </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-6">
-            {title}
+    <section id="core-team" className="bg-[#FAFAF8] border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32">
+        {/* Section header */}
+        <div className="max-w-2xl mb-16 sm:mb-20">
+          <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+            Core Team
           </p>
-          <div className="w-12 h-1 bg-[color:var(--accent)] mx-auto rounded-full mb-6" />
-          <p className="text-lg text-zinc-600 dark:text-zinc-400">
+          <h2
+            className="font-serif font-black text-[#0F172A]"
+            style={{
+              fontSize: "clamp(2rem, 4vw, 3.25rem)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {title}
+          </h2>
+          <p
+            className="font-sans text-slate-500 mt-4"
+            style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}
+          >
             {subtitle}
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Team grid — clean profiles */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {members.map((member, index) => (
-            <div
-              key={index}
-              className="bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl p-6 text-center hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 flex flex-col justify-between"
+            <article
+              key={member.name}
+              id={`team-member-${index + 1}`}
+              className="flex flex-col"
             >
-              <div>
-                {/* Avatar Placeholder with initials */}
-                <div
-                  className={`w-24 h-24 rounded-full bg-gradient-to-br ${getGradient(
-                    member.name
-                  )} text-white flex items-center justify-center text-2xl font-extrabold mx-auto mb-6 shadow-sm`}
+              {/* Portrait with initial fallback */}
+              <div
+                className="relative mb-5 overflow-hidden rounded-2xl flex items-center justify-center"
+                style={{ aspectRatio: "1/1", backgroundColor: avatarColors[index % avatarColors.length] }}
+              >
+                {/* Initials fallback — shown always since no real photos */}
+                <span
+                  className="font-serif font-black text-white select-none"
+                  style={{ fontSize: "3rem", letterSpacing: "-0.02em" }}
+                  aria-hidden="true"
                 >
                   {getInitials(member.name)}
-                </div>
-
-                {/* Name & Role */}
-                <h3 className="text-lg font-bold text-zinc-950 dark:text-white mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-xs font-semibold text-[color:var(--accent)] mb-4 uppercase tracking-wider">
-                  {member.role}
-                </p>
-
-                {/* Bio Snippet */}
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 mb-6">
-                  {member.bio}
-                </p>
+                </span>
               </div>
 
-              {/* View Bio Button */}
-              <div>
-                <button
-                  onClick={() => openModal(member)}
-                  className="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold text-zinc-950 bg-zinc-200/60 hover:bg-zinc-200 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
-                >
-                  Read Profile & Bio
-                </button>
-              </div>
-            </div>
+              {/* Name */}
+              <h3
+                className="font-serif font-black text-[#0F172A] mb-1"
+                style={{
+                  fontSize: "1.25rem",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.25,
+                }}
+              >
+                {member.name}
+              </h3>
+
+              {/* Role — orange accent */}
+              <p
+                className="font-sans font-bold mb-3"
+                style={{ color: "var(--accent)", fontSize: "0.75rem", letterSpacing: "0.06em", textTransform: "uppercase" }}
+              >
+                {member.role}
+              </p>
+
+              {/* Bio */}
+              <p
+                className="font-sans text-slate-500 flex-1"
+                style={{ fontSize: "0.875rem", lineHeight: 1.75 }}
+              >
+                {member.bio}
+              </p>
+
+              {/* Email link */}
+              <a
+                href={`mailto:${member.email}`}
+                className="mt-4 font-sans font-semibold hover:underline"
+                style={{ color: "var(--accent)", fontSize: "0.8125rem" }}
+              >
+                {member.email}
+              </a>
+            </article>
           ))}
         </div>
-
-        {/* Press/Media Contact Block */}
-        <div className="mt-20 glass-panel rounded-2xl p-8 text-center max-w-2xl mx-auto shadow-sm border border-zinc-200/60 dark:border-zinc-800/60">
-          <h3 className="text-lg font-bold text-zinc-950 mb-2">Press & Media Inquiries</h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-            Are you a journalist or researcher interested in writing about our community smart labs or digital literacy studies?
-          </p>
-          <a
-            href={`mailto:${siteConfig.contact.email}?subject=Press Inquiry - Project Sankalp`}
-            className="inline-flex items-center text-sm font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)]"
-          >
-            Email Press Contact <span aria-hidden="true" className="ml-1">→</span>
-          </a>
-        </div>
       </div>
-
-      {/* Accessible Bio Modal */}
-      {selectedMember && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm animate-fade-in"
-          onClick={closeModal}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-        >
-          <div
-            ref={modalRef}
-            tabIndex={-1}
-            className="relative w-full max-w-lg bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl p-6 sm:p-8 animate-scale-up focus:outline-none"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 p-1.5 rounded-full text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
-              aria-label="Close modal"
-            >
-              <X size={20} />
-            </button>
-
-            {/* Modal Header */}
-            <div className="flex items-center gap-4 sm:gap-6 mb-6">
-              <div
-                className={`w-16 h-16 rounded-full bg-gradient-to-br ${getGradient(
-                  selectedMember.name
-                )} text-white flex items-center justify-center text-xl font-extrabold shadow-sm`}
-              >
-                {getInitials(selectedMember.name)}
-              </div>
-              <div>
-                <h3 id="modal-title" className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white">
-                  {selectedMember.name}
-                </h3>
-                <p className="text-sm font-semibold text-[color:var(--accent)] uppercase tracking-wider">
-                  {selectedMember.role}
-                </p>
-              </div>
-            </div>
-
-            {/* Modal Content */}
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-2">Biography</h4>
-                <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                  {selectedMember.bio}
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-3">Direct Contact</h4>
-                <div className="flex flex-wrap gap-4 items-center">
-                  <a
-                    href={`mailto:${selectedMember.email}`}
-                    className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-lg transition-colors"
-                  >
-                    Email {selectedMember.name.split(" ")[0]}
-                  </a>
-                  <a
-                    href={selectedMember.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-[color:var(--accent)] dark:text-zinc-300 dark:hover:text-[color:var(--accent)]"
-                    aria-label={`${selectedMember.name}'s LinkedIn profile`}
-                  >
-                    <Linkedin size={16} />
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

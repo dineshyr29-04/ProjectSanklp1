@@ -1,101 +1,92 @@
 import React from "react";
+import Image from "next/image";
 import { siteConfig } from "../../config/org";
-import { IconRenderer } from "../ui/Icons";
 
 export default function About() {
-  const { title, subtitle, description, mission, vision, values, history } = siteConfig.about;
+  const { title, description } = siteConfig.about;
+
+  const paragraphs = description.split("\n\n");
 
   return (
-    <section id="about" className="py-24 sm:py-32 relative overflow-hidden bg-white">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[color:var(--accent)]/10 rounded-full blur-[100px] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-[color:var(--accent)] mb-3">
-            {title}
-          </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-6">
-            {subtitle}
-          </p>
-          <div className="w-12 h-1 bg-[color:var(--accent)] mx-auto rounded-full mb-6" />
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            {description}
-          </p>
-        </div>
-
-        {/* Mission & Vision Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-24">
-          <div className="glass-panel rounded-2xl p-8 sm:p-10 shadow-sm relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-2 h-full bg-[color:var(--accent)]" />
-            <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-4">Our Mission</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base sm:text-lg">
-              {mission}
+    <section id="who-we-are" className="bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-32">
+        {/* Two-column editorial layout */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left — Text */}
+          <div>
+            <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+              Who We Are
             </p>
-          </div>
-          <div className="glass-panel rounded-2xl p-8 sm:p-10 shadow-sm relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-2 h-full bg-[color:var(--accent)]" />
-            <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-4">Our Vision</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base sm:text-lg">
-              {vision}
-            </p>
-          </div>
-        </div>
 
-        {/* Values Grid */}
-        <div className="mb-24 sm:mb-32">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white text-center mb-12">
-            Our Core Values
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {values.map((value, index) => (
-              <div 
-                key={index} 
-                className="bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/80 rounded-2xl p-6 sm:p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-200"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[color:var(--card)] text-[color:var(--accent)] flex items-center justify-center mb-6">
-                  <IconRenderer name={value.icon} size={24} />
-                </div>
-                <h4 className="text-lg font-bold text-zinc-950 dark:text-white mb-3">
-                  {value.title}
-                </h4>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {value.description}
+            <h2
+              className="font-serif font-black text-[#0F172A] mb-8"
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                lineHeight: 1.08,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {title}
+            </h2>
+
+            <hr className="editorial-divider mb-8" />
+
+            <div className="space-y-5">
+              {paragraphs.map((para, i) => (
+                <p
+                  key={i}
+                  className="font-sans text-slate-600"
+                  style={{ fontSize: "1.0625rem", lineHeight: 1.8 }}
+                >
+                  {para}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
 
-        {/* Timeline (History) */}
-        <div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white text-center mb-16">
-            Our Journey So Far
-          </h3>
-          <div className="relative border-l border-zinc-200 dark:border-zinc-800 max-w-3xl mx-auto pl-6 sm:pl-8">
-            {history.map((event, index) => (
-              <div key={index} className="mb-10 last:mb-0 relative">
-                {/* Timeline Dot */}
-                <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white border-2 border-[color:var(--accent)]">
-                  <span className="h-2 w-2 rounded-full bg-[color:var(--accent)]" />
-                </span>
-                
-                {/* Content */}
-                <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200/50 dark:border-zinc-800/50 rounded-xl p-6 shadow-sm hover:shadow transition-shadow">
-                  <div className="flex flex-wrap items-baseline gap-2 mb-2">
-                    <span className="text-lg font-extrabold text-[color:var(--accent)]">
-                      {event.year}
-                    </span>
-                    <h4 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white">
-                      {event.title}
-                    </h4>
-                  </div>
-                  <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                    {event.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {/* Pull-quote / highlighted stat */}
+            <blockquote
+              className="mt-10 border-l-4 pl-6"
+              style={{ borderColor: "var(--accent)" }}
+            >
+              <p
+                className="font-serif font-bold text-[#0F172A] italic"
+                style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)", lineHeight: 1.45 }}
+              >
+                "Not Me, But You — the NSS motto that drives every action we take."
+              </p>
+            </blockquote>
+          </div>
+
+          {/* Right — Photograph */}
+          <div className="relative">
+            <div
+              className="relative overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "4/3" }}
+            >
+              <Image
+                src="/about-workshop.jpg"
+                alt="Students collaborating in a Project Sankalp workshop"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+
+            {/* Floating stat accent */}
+            <div
+              className="absolute -bottom-6 -left-6 bg-white border border-slate-100 shadow-lg rounded-2xl px-7 py-5"
+              aria-hidden="true"
+            >
+              <p
+                className="font-serif font-black text-[#0F172A]"
+                style={{ fontSize: "2.25rem", lineHeight: 1, letterSpacing: "-0.04em" }}
+              >
+                2021
+              </p>
+              <p className="font-sans text-slate-500 text-xs font-semibold mt-1 uppercase tracking-wider">
+                Est. Founded
+              </p>
+            </div>
           </div>
         </div>
       </div>
