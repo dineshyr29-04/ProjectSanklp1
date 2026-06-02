@@ -1,97 +1,127 @@
 import React from "react";
 import Header from "../../src/components/sections/Header";
 import Footer from "../../src/components/sections/Footer";
+import Team from "../../src/components/sections/Team";
+import FinalCTA from "../../src/components/sections/FinalCTA";
 import { siteConfig } from "../../src/config/org";
 
 export const metadata = {
   title: "Core Leadership Team | Project Sankalp",
-  description: "Meet the founders, coordinators, and curriculum designers driving Project Sankalp's digital smart labs.",
+  description:
+    "Meet the passionate students, mentors, and coordinators who drive Project Sankalp's social impact programs and community initiatives.",
 };
 
 export default function CoreTeamPage() {
-  const { title, subtitle, members } = siteConfig.team;
-
-  // Generate initials for avatar placeholder
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .toUpperCase();
-  };
+  const { contact } = siteConfig;
 
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Leadership</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
-              {title}
+      <main id="main-content" className="flex-grow bg-white">
+        {/* Page hero */}
+        <section className="bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+            <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+              Core Team
+            </p>
+            <h1
+              className="font-serif font-black text-[#0F172A] max-w-3xl"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                lineHeight: 1.06,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              The people behind the mission.
             </h1>
-            <p className="text-sm font-sans text-slate-500 dark:text-slate-400">
-              {subtitle}
+            <p
+              className="font-sans text-slate-500 mt-5 max-w-xl"
+              style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}
+            >
+              A diverse group of students, educators, and professionals united by one purpose: to serve communities and build a better future through education and technology.
             </p>
           </div>
+        </section>
 
-          {/* Core Team Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {members.map((member, index) => (
-              <div 
-                key={index}
-                className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/30 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+        {/* Full Team section */}
+        <Team />
+
+        {/* Values strip */}
+        <section className="bg-white border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+                  Media & Press
+                </p>
+                <h2
+                  className="font-serif font-black text-[#0F172A] mb-5"
+                  style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}
+                >
+                  Press enquiries & media contact
+                </h2>
+                <p
+                  className="font-sans text-slate-500 mb-8"
+                  style={{ fontSize: "1rem", lineHeight: 1.75 }}
+                >
+                  Are you a journalist, researcher, or content creator interested in Project Sankalp's work? We welcome media partnerships and are happy to share our story.
+                </p>
+                <a
+                  href={`mailto:${contact.email}?subject=Press Inquiry – Project Sankalp`}
+                  className="inline-flex items-center gap-2 font-sans font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5"
+                  style={{
+                    backgroundColor: "#0F172A",
+                    color: "#fff",
+                    fontSize: "0.875rem",
+                    textDecoration: "none",
+                  }}
+                >
+                  Email Press Office
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              <div
+                className="p-8 rounded-2xl border border-slate-100"
+                style={{ backgroundColor: "#FAFAF8" }}
               >
-                <div>
-                  {/* Circle Avatar Box */}
-                  <div className="bg-slate-50/50 p-8 flex items-center justify-center select-none border-b border-slate-100">
-                    <div className="w-16 h-16 rounded-full border border-slate-200 bg-white flex items-center justify-center font-sans text-xl font-black text-black shadow-xs">
-                      {getInitials(member.name)}
-                    </div>
+                <p className="font-sans font-bold text-slate-400 text-xs uppercase tracking-widest mb-4">
+                  Contact Details
+                </p>
+                <div className="space-y-3 font-sans" style={{ fontSize: "0.9375rem" }}>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[#0F172A] mb-0.5">Email</span>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="hover:underline"
+                      style={{ color: "var(--accent)", textDecoration: "none" }}
+                    >
+                      {contact.email}
+                    </a>
                   </div>
-
-                  <div className="p-6">
-                    <span className="inline-block px-2.5 py-0.5 bg-[color:var(--card)] text-slate-600 rounded-full text-[10px] font-sans font-bold border border-slate-100 mb-3">
-                      {member.role}
-                    </span>
-                    <h2 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-3">
-                      {member.name}
-                    </h2>
-                    <p className="text-xs font-sans text-slate-500 dark:text-slate-400 leading-relaxed">
-                      {member.bio}
-                    </p>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[#0F172A] mb-0.5">Phone</span>
+                    <a
+                      href={`tel:${contact.phone}`}
+                      className="hover:underline text-slate-600"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {contact.phone}
+                    </a>
                   </div>
-                </div>
-
-                <div className="p-6 border-t border-slate-100 bg-slate-50/10">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="w-full inline-flex items-center justify-center px-4 py-2 bg-black hover:bg-[color:var(--accent)] text-white rounded-full text-xs font-sans font-bold uppercase transition-all shadow-xs"
-                  >
-                    Contact Email
-                  </a>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[#0F172A] mb-0.5">Address</span>
+                    <p className="text-slate-500">{contact.address}</p>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
+        </section>
 
-          {/* Direct Press / Media Block */}
-          <div className="border border-slate-100 dark:border-slate-800 p-8 rounded-3xl text-center max-w-2xl mx-auto bg-[#f8fafc] dark:bg-slate-900/30 shadow-xs">
-            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Media & Inquiries</span>
-            <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mt-3 mb-2">Press Contact Office</h3>
-            <p className="text-xs font-sans text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
-              Are you a researcher or journalist interested in writing about our community smart labs or digital literacy studies?
-            </p>
-            <a
-              href={`mailto:${siteConfig.contact.email}?subject=Press Inquiry - Project Sankalp`}
-              className="text-xs font-sans font-bold text-[color:var(--accent)] hover:underline"
-            >
-              Email Press Office: {siteConfig.contact.email}
-            </a>
-          </div>
-
-        </div>
+        <FinalCTA />
       </main>
       <Footer />
     </>

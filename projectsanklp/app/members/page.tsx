@@ -79,13 +79,18 @@ export default function MembersPage() {
       <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Join the Community</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
+          <div className="max-w-3xl mx-auto mb-16">
+            <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+              Join the Community
+            </p>
+            <h1
+              className="font-serif font-black text-[#0F172A] mb-5"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", lineHeight: 1.06, letterSpacing: "-0.025em" }}
+            >
               Members & Volunteers
             </h1>
-            <p className="text-sm font-sans text-slate-500 dark:text-slate-400">
-              Apply to join as a technology mentor, request community lab setups, or sponsor hardware to support digital access in rural spaces.
+            <p className="font-sans text-slate-500" style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}>
+              Apply to volunteer, connect as a mentor, or support our community programs. Every contribution — big or small — moves us closer to our mission.
             </p>
           </div>
 

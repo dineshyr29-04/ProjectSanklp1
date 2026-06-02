@@ -4,10 +4,10 @@ import Hero from "../src/components/sections/Hero";
 import About from "../src/components/sections/About";
 import Mission from "../src/components/sections/Mission";
 import Impact from "../src/components/sections/Impact";
-import Initiatives from "../src/components/sections/Initiatives";
-import EventsTimeline from "../src/components/sections/EventsTimeline";
+import InitiativesPreview from "../src/components/sections/InitiativesPreview";
+import EventsPreview from "../src/components/sections/EventsPreview";
 import StudentStories from "../src/components/sections/StudentStories";
-import Team from "../src/components/sections/Team";
+import TeamPreview from "../src/components/sections/TeamPreview";
 import Partners from "../src/components/sections/Partners";
 import FinalCTA from "../src/components/sections/FinalCTA";
 import Footer from "../src/components/sections/Footer";
@@ -17,34 +17,34 @@ export default function Home() {
     <>
       <Header />
       <main id="main-content" className="flex-grow bg-white">
-        {/* Section 1 — Hero: Full-screen photograph + editorial headline */}
+        {/* § 1 — Hero: Full-screen photograph + editorial headline + stat strip */}
         <Hero />
 
-        {/* Section 2 — Who We Are: Editorial two-column narrative */}
+        {/* § 2 — Who We Are: Editorial two-column narrative with image */}
         <About />
 
-        {/* Section 3 — Our Mission: Three pillars — Education, Leadership, Community Impact */}
+        {/* § 3 — Our Mission: Three pillars — Education, Leadership, Community Impact */}
         <Mission />
 
-        {/* Section 4 — Our Impact: Large statistics on navy background */}
+        {/* § 4 — Our Impact: Large statistics on deep navy background */}
         <Impact />
 
-        {/* Section 5 — Initiatives: Alternating left-right image + text layout */}
-        <Initiatives />
+        {/* § 5 — Initiatives Preview: 3 initiative cards → links to /events */}
+        <InitiativesPreview />
 
-        {/* Section 6 — Events & Activities: Vertical timeline layout */}
-        <EventsTimeline />
+        {/* § 6 — Events Preview: 4 recent events → links to /events */}
+        <EventsPreview />
 
-        {/* Section 7 — Student Stories: Testimonials with portraits */}
+        {/* § 7 — Student Stories: Testimonials with serif quotes + avatars */}
         <StudentStories />
 
-        {/* Section 8 — Core Team: Professional member profiles */}
-        <Team />
+        {/* § 8 — Team Preview: 4 core members → links to /core-team */}
+        <TeamPreview />
 
-        {/* Section 9 — Partners: Monochrome institution logo wall */}
+        {/* § 9 — Partners: Monochrome institution logo wall → links to /partners */}
         <Partners />
 
-        {/* Section 10 — Final CTA: "Be Part of Something Bigger Than Yourself" */}
+        {/* § 10 — Final CTA: "Be Part of Something Bigger Than Yourself" */}
         <FinalCTA />
       </main>
       <Footer />

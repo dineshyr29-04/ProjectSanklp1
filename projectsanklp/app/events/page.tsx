@@ -1,100 +1,121 @@
 import React from "react";
 import Header from "../../src/components/sections/Header";
 import Footer from "../../src/components/sections/Footer";
+import EventsTimeline from "../../src/components/sections/EventsTimeline";
+import StudentStories from "../../src/components/sections/StudentStories";
+import FinalCTA from "../../src/components/sections/FinalCTA";
 import { siteConfig } from "../../src/config/org";
 
 export const metadata = {
-  title: "Events & History Milestones | Project Sankalp",
-  description: "Explore Project Sankalp's past workshops, smart lab launches, community hackathons, and institutional timeline milestones.",
+  title: "Events & Activities | Project Sankalp",
+  description:
+    "Explore Project Sankalp's timeline of workshops, awareness campaigns, community drives, leadership programs, hackathons, and social projects.",
 };
 
 export default function EventsPage() {
-  const { title: galleryTitle, subtitle: gallerySubtitle, stories } = siteConfig.gallery;
-  const { title: historyTitle, history } = siteConfig.about;
+  const { history } = siteConfig.about;
 
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Section 1: Events Log / Gallery Stories */}
-          <div className="mb-20">
-              <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-3 py-1 bg-[color:var(--card)] border border-slate-100 text-xs font-sans font-bold text-slate-600 rounded-full">Logged Events</span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
-                {galleryTitle}
-              </h1>
-              <p className="text-sm font-sans text-slate-500 dark:text-slate-400">
-                {gallerySubtitle}
-              </p>
-            </div>
-
-            {/* Rounded Events Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {stories.map((story, index) => (
-                <div 
-                  key={index}
-                  className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0f172a] rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow"
-                >
-                  {/* Soft background header */}
-                  <div className="bg-slate-50/50 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
-                      <div className="text-xs font-sans font-bold text-slate-500">
-                      Event #{index + 1}
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    <span className="inline-block px-2.5 py-0.5 bg-[color:var(--card)] text-slate-600 rounded-full text-[10px] font-sans font-bold border border-slate-100 mb-3">
-                      {story.category}
-                    </span>
-                    <h2 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-3">
-                      {story.title}
-                    </h2>
-                    <p className="text-xs font-sans text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
-                      {story.description}
-                    </p>
-                    
-                    <div className="border-t border-slate-100 pt-4 text-[10px] font-sans font-bold text-[color:var(--accent)]">
-                      Active Digital Record
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <main id="main-content" className="flex-grow bg-white">
+        {/* Page hero */}
+        <section className="bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+            <p
+              className="eyebrow mb-5"
+              style={{ color: "var(--accent)" }}
+            >
+              Events & Activities
+            </p>
+            <h1
+              className="font-serif font-black text-[#0F172A] max-w-3xl"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                lineHeight: 1.06,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Where service comes to life.
+            </h1>
+            <p
+              className="font-sans text-slate-500 mt-5 max-w-xl"
+              style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}
+            >
+              From leadership summits and hackathons to community drives and awareness campaigns — every event is a step toward a more engaged society.
+            </p>
           </div>
+        </section>
 
-          {/* Section 2: Timeline History Milestones */}
-          <div className="border-t border-slate-100 dark:border-slate-800/60 pt-16">
-              <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-3 py-1 bg-[color:var(--card)] border border-slate-100 text-xs font-sans font-bold text-slate-600 rounded-full">Project Logs</span>
-              <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
-                {historyTitle} - Our Chronology
+        {/* Full events timeline */}
+        <EventsTimeline />
+
+        {/* Our History milestones */}
+        <section className="bg-[#FAFAF8] border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+            <div className="max-w-2xl mb-14">
+              <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+                Our Journey
+              </p>
+              <h2
+                className="font-serif font-black text-[#0F172A]"
+                style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.08, letterSpacing: "-0.02em" }}
+              >
+                A timeline of growth.
               </h2>
             </div>
 
-            <div className="max-w-3xl mx-auto border-l-2 border-slate-100 dark:border-slate-850 pl-6 sm:pl-10 space-y-12 relative">
-              {history.map((event, index) => (
-                <div key={index} className="relative group">
-                  {/* Rounded Year Badge */}
-                  <span className="absolute -left-[35px] sm:-left-[51px] top-1 text-xs font-sans font-bold bg-black text-white px-2.5 py-1 rounded-full z-10 select-none shadow-sm">
-                    {event.year}
-                  </span>
+            <div className="relative max-w-2xl">
+              {/* Vertical line */}
+              <div
+                className="absolute left-[1.1rem] top-2 bottom-2 w-px"
+                style={{ backgroundColor: "#E2E8F0" }}
+                aria-hidden="true"
+              />
 
-                  <div className="border border-slate-100 dark:border-slate-800 p-6 rounded-2xl bg-white dark:bg-[#0f172a] shadow-xs hover:border-slate-200 dark:hover:border-slate-700 transition-colors">
-                    <h3 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-2">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm font-sans text-slate-650 dark:text-slate-400 leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <ol className="space-y-10" aria-label="Organization history">
+                {history.map((item, index) => (
+                  <li key={index} className="flex gap-8">
+                    {/* Year badge */}
+                    <div className="flex-shrink-0 flex flex-col items-center" style={{ width: "2.25rem" }}>
+                      <div
+                        className="w-4 h-4 rounded-full border-2 bg-white mt-1 flex-shrink-0"
+                        style={{ borderColor: "var(--accent)" }}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <div className="pb-2">
+                      <span
+                        className="font-sans font-bold"
+                        style={{ color: "var(--accent)", fontSize: "0.75rem", letterSpacing: "0.06em", textTransform: "uppercase" }}
+                      >
+                        {item.year}
+                      </span>
+                      <h3
+                        className="font-serif font-bold text-[#0F172A] mt-1 mb-2"
+                        style={{ fontSize: "1.25rem", letterSpacing: "-0.01em" }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        className="font-sans text-slate-500"
+                        style={{ fontSize: "0.9375rem", lineHeight: 1.75 }}
+                      >
+                        {item.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
+        </section>
 
-        </div>
+        {/* Student stories on events page */}
+        <StudentStories />
+
+        <FinalCTA />
       </main>
       <Footer />
     </>

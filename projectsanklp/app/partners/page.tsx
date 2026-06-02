@@ -1,80 +1,163 @@
 import React from "react";
 import Header from "../../src/components/sections/Header";
 import Footer from "../../src/components/sections/Footer";
+import Partners from "../../src/components/sections/Partners";
+import FinalCTA from "../../src/components/sections/FinalCTA";
 import { siteConfig } from "../../src/config/org";
 
 export const metadata = {
-  title: "Our Trusted Partners | Project Sankalp",
-  description: "Meet the partner organizations providing hardware, solar grid systems, and funding support to Project Sankalp.",
+  title: "Our Partners & Supporters | Project Sankalp",
+  description:
+    "Meet the institutions, NGOs, universities, and organizations that partner with Project Sankalp to amplify our community impact.",
 };
 
 export default function PartnersPage() {
-  const { title, subtitle, list } = siteConfig.partners;
+  const { contact } = siteConfig;
 
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#0f172a] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Collaborators</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
-              {title}
+      <main id="main-content" className="flex-grow bg-white">
+        {/* Page hero */}
+        <section className="bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+            <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+              Our Partners
+            </p>
+            <h1
+              className="font-serif font-black text-[#0F172A] max-w-3xl"
+              style={{
+                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                lineHeight: 1.06,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Together, we go further.
             </h1>
-            <p className="text-sm font-sans text-slate-500 dark:text-slate-400">
-              {subtitle}
+            <p
+              className="font-sans text-slate-500 mt-5 max-w-xl"
+              style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}
+            >
+              Project Sankalp is powered by a growing network of schools, universities, NGOs, and industry partners who believe in the transformative power of education and service.
             </p>
           </div>
+        </section>
 
-          {/* Partners Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {list.map((partner, index) => (
-              <div 
-                key={index}
-                className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/30 rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  {/* Logo Representation */}
-                  <div className="bg-slate-50/50 p-8 flex items-center justify-center text-center select-none min-h-[140px] border-b border-slate-100">
-                    <div className="px-5 py-2.5 bg-white text-black border border-slate-150 rounded-full font-sans font-black tracking-tight shadow-xs">
-                      {partner.name}
+        {/* Full Partners section */}
+        <Partners />
+
+        {/* Partnership CTA section */}
+        <section className="bg-[#FAFAF8] border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24">
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+              {/* Become a partner */}
+              <div>
+                <p className="eyebrow mb-5" style={{ color: "var(--accent)" }}>
+                  Partnership Enquiries
+                </p>
+                <h2
+                  className="font-serif font-black text-[#0F172A] mb-5"
+                  style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", lineHeight: 1.1, letterSpacing: "-0.02em" }}
+                >
+                  Become an institutional partner
+                </h2>
+                <p
+                  className="font-sans text-slate-500 mb-6"
+                  style={{ fontSize: "1rem", lineHeight: 1.75 }}
+                >
+                  We welcome partnerships with schools, colleges, NGOs, corporates, and government bodies. Whether through hardware donations, funding, volunteer recruitment, or curriculum collaboration — every form of support amplifies our impact.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Hardware & infrastructure donations",
+                    "CSR partnerships & funding",
+                    "Curriculum & training collaboration",
+                    "Volunteer & student recruitment",
+                    "Research & knowledge partnerships",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span style={{ color: "var(--support)", marginTop: "0.2rem", flexShrink: 0 }}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="font-sans text-slate-600" style={{ fontSize: "0.9375rem", lineHeight: 1.6 }}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`mailto:${contact.email}?subject=Partnership Enquiry – Project Sankalp`}
+                  className="inline-flex items-center gap-2 font-sans font-bold px-7 py-3 rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    backgroundColor: "#0F172A",
+                    color: "#fff",
+                    fontSize: "0.875rem",
+                    textDecoration: "none",
+                  }}
+                >
+                  Get in touch
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Why partner */}
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Real, measurable impact",
+                    desc: "Your contribution directly funds community labs, mentorship programs, and awareness drives that reach thousands of students.",
+                  },
+                  {
+                    title: "NSS-aligned credibility",
+                    desc: "Project Sankalp operates under National Service Scheme values, giving partners institutional recognition and credibility.",
+                  },
+                  {
+                    title: "CSR benefit eligible",
+                    desc: "Contributions to Project Sankalp are eligible for Corporate Social Responsibility (CSR) reporting under applicable guidelines.",
+                  },
+                  {
+                    title: "Visibility & brand alignment",
+                    desc: "Partners are featured across our communications, events, and digital platforms, associating your brand with meaningful social work.",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-4 p-5 rounded-xl border border-slate-100"
+                    style={{ backgroundColor: "#fff" }}
+                  >
+                    <div
+                      className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-serif font-black text-white text-sm"
+                      style={{ backgroundColor: "#0F172A" }}
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3
+                        className="font-serif font-bold text-[#0F172A] mb-1"
+                        style={{ fontSize: "1rem", letterSpacing: "-0.01em" }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        className="font-sans text-slate-500"
+                        style={{ fontSize: "0.875rem", lineHeight: 1.7 }}
+                      >
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
-
-                  {/* Description */}
-                  <div className="p-6">
-                    <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed">
-                      {partner.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-6 pt-0">
-                  <div className="border-t border-slate-100 pt-4 text-[10px] font-sans font-bold text-[color:var(--accent)]">
-                    Partner Record: Active
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+        </section>
 
-          {/* Sponsorship Statement Card */}
-          <div className="border border-slate-100 dark:border-slate-800 p-8 sm:p-12 rounded-3xl bg-slate-50/50 dark:bg-slate-900/20 max-w-3xl mx-auto text-center shadow-xs">
-            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Sponsorship Intake</span>
-            <h3 className="text-2xl font-serif font-black text-slate-900 dark:text-white mt-3 mb-4">Become an Institutional Partner</h3>
-            <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed mb-6">
-              We seek donations of retired enterprise laptop hardware, solar inverter panels, and server cabinets. Align your Corporate Social Responsibility (CSR) targets with real, local tech literacy outcomes.
-            </p>
-            <a
-              href="mailto:info@projectsankalp.org?subject=CSR Partnership Inquiry"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-all duration-200 shadow-xs"
-            >
-              Connect with CSR Desk
-            </a>
-          </div>
-
-        </div>
+        <FinalCTA />
       </main>
       <Footer />
     </>
