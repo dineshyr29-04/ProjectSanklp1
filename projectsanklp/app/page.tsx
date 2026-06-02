@@ -17,35 +17,15 @@ export default function Home() {
     <>
       <Header />
       <main id="main-content" className="flex-grow bg-white">
-        {/* § 1 — Hero: Full-screen photograph + editorial headline + stat strip */}
         <Hero />
-
-        {/* § 2 — Who We Are: Editorial two-column narrative with image */}
         <About />
-
-        {/* § 3 — Our Mission: Three pillars — Education, Leadership, Community Impact */}
         <Mission />
-
-        {/* § 4 — Our Impact: Large statistics on deep navy background */}
         <Impact />
-
-        {/* § 5 — Initiatives Preview: 3 initiative cards → links to /events */}
         <InitiativesPreview />
-
-        {/* § 6 — Events Preview: 4 recent events → links to /events */}
         <EventsPreview />
-
-        {/* § 7 — Student Stories: Testimonials with serif quotes + avatars */}
         <StudentStories />
-
-        {/* § 8 — Team Preview: 4 core members → links to /core-team */}
         <TeamPreview />
-
-        {/* § 9 — Partners: Monochrome institution logo wall → links to /partners */}
         <Partners />
-
-        {/* § 10 — Final CTA: "Be Part of Something Bigger Than Yourself" */}
-        <FinalCTA />
       </main>
       <Footer />
     </>
