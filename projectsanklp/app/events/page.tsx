@@ -20,8 +20,8 @@ export default function EventsPage() {
           
           {/* Section 1: Events Log / Gallery Stories */}
           <div className="mb-20">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-3 py-1 bg-[#f8fafc] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-xs font-sans font-bold text-slate-600 dark:text-slate-350 rounded-full">Logged Events</span>
+              <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block px-3 py-1 bg-[color:var(--card)] border border-slate-100 text-xs font-sans font-bold text-slate-600 rounded-full">Logged Events</span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
                 {galleryTitle}
               </h1>
@@ -38,14 +38,14 @@ export default function EventsPage() {
                   className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-[#0f172a] rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow"
                 >
                   {/* Soft background header */}
-                  <div className="bg-slate-50/50 dark:bg-slate-900/30 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
-                    <div className="text-xs font-sans font-bold text-slate-500 dark:text-slate-400">
+                  <div className="bg-slate-50/50 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
+                      <div className="text-xs font-sans font-bold text-slate-500">
                       Event #{index + 1}
                     </div>
                   </div>
 
                   <div className="p-6">
-                    <span className="inline-block px-2.5 py-0.5 bg-[#f8fafc] dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[10px] font-sans font-bold border border-slate-100 dark:border-slate-700 mb-3">
+                    <span className="inline-block px-2.5 py-0.5 bg-[color:var(--card)] text-slate-600 rounded-full text-[10px] font-sans font-bold border border-slate-100 mb-3">
                       {story.category}
                     </span>
                     <h2 className="text-lg font-serif font-black text-slate-900 dark:text-white mb-3">
@@ -55,7 +55,7 @@ export default function EventsPage() {
                       {story.description}
                     </p>
                     
-                    <div className="border-t border-slate-100 dark:border-slate-800 pt-4 text-[10px] font-sans font-bold text-[#10b981]">
+                    <div className="border-t border-slate-100 pt-4 text-[10px] font-sans font-bold text-[color:var(--accent)]">
                       Active Digital Record
                     </div>
                   </div>
@@ -66,8 +66,8 @@ export default function EventsPage() {
 
           {/* Section 2: Timeline History Milestones */}
           <div className="border-t border-slate-100 dark:border-slate-800/60 pt-16">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-3 py-1 bg-[#f8fafc] dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-xs font-sans font-bold text-slate-600 dark:text-slate-350 rounded-full">Project Logs</span>
+              <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block px-3 py-1 bg-[color:var(--card)] border border-slate-100 text-xs font-sans font-bold text-slate-600 rounded-full">Project Logs</span>
               <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
                 {historyTitle} - Our Chronology
               </h2>
@@ -77,7 +77,7 @@ export default function EventsPage() {
               {history.map((event, index) => (
                 <div key={index} className="relative group">
                   {/* Rounded Year Badge */}
-                  <span className="absolute -left-[35px] sm:-left-[51px] top-1 text-xs font-sans font-bold bg-slate-900 text-white dark:bg-[#10b981] dark:text-slate-950 px-2.5 py-1 rounded-full z-10 select-none shadow-sm">
+                  <span className="absolute -left-[35px] sm:-left-[51px] top-1 text-xs font-sans font-bold bg-black text-white px-2.5 py-1 rounded-full z-10 select-none shadow-sm">
                     {event.year}
                   </span>
 

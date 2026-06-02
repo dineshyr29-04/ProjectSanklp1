@@ -18,7 +18,7 @@ export default function PartnersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Collaborators</span>
+            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Collaborators</span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
               {title}
             </h1>
@@ -36,8 +36,8 @@ export default function PartnersPage() {
               >
                 <div>
                   {/* Logo Representation */}
-                  <div className="bg-slate-50/50 dark:bg-slate-900/30 p-8 flex items-center justify-center text-center select-none min-h-[140px] border-b border-slate-100 dark:border-slate-850">
-                    <div className="px-5 py-2.5 bg-white dark:bg-[#0f172a] text-slate-900 dark:text-[#10b981] border border-slate-150 dark:border-slate-800 rounded-full font-sans font-black tracking-tight shadow-xs">
+                  <div className="bg-slate-50/50 p-8 flex items-center justify-center text-center select-none min-h-[140px] border-b border-slate-100">
+                    <div className="px-5 py-2.5 bg-white text-black border border-slate-150 rounded-full font-sans font-black tracking-tight shadow-xs">
                       {partner.name}
                     </div>
                   </div>
@@ -51,7 +51,7 @@ export default function PartnersPage() {
                 </div>
 
                 <div className="p-6 pt-0">
-                  <div className="border-t border-slate-100 dark:border-slate-850 pt-4 text-[10px] font-sans font-bold text-[#10b981]">
+                  <div className="border-t border-slate-100 pt-4 text-[10px] font-sans font-bold text-[color:var(--accent)]">
                     Partner Record: Active
                   </div>
                 </div>
@@ -61,14 +61,14 @@ export default function PartnersPage() {
 
           {/* Sponsorship Statement Card */}
           <div className="border border-slate-100 dark:border-slate-800 p-8 sm:p-12 rounded-3xl bg-slate-50/50 dark:bg-slate-900/20 max-w-3xl mx-auto text-center shadow-xs">
-            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Sponsorship Intake</span>
+            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Sponsorship Intake</span>
             <h3 className="text-2xl font-serif font-black text-slate-900 dark:text-white mt-3 mb-4">Become an Institutional Partner</h3>
             <p className="text-sm font-sans text-slate-600 dark:text-slate-350 leading-relaxed mb-6">
               We seek donations of retired enterprise laptop hardware, solar inverter panels, and server cabinets. Align your Corporate Social Responsibility (CSR) targets with real, local tech literacy outcomes.
             </p>
             <a
               href="mailto:info@projectsankalp.org?subject=CSR Partnership Inquiry"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-450 dark:text-slate-950 rounded-full transition-all duration-200 shadow-xs"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-all duration-200 shadow-xs"
             >
               Connect with CSR Desk
             </a>

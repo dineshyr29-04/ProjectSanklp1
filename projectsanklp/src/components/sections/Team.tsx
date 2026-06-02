@@ -57,7 +57,7 @@ export default function Team() {
     const gradients = [
       "from-indigo-500 to-purple-600",
       "from-blue-500 to-indigo-600",
-      "from-emerald-400 to-teal-600",
+      "from-amber-400 to-orange-600",
       "from-violet-500 to-purple-700",
     ];
     const index = name.length % gradients.length;
@@ -66,18 +66,18 @@ export default function Team() {
 
   return (
     <section id="team" className="py-24 sm:py-32 relative overflow-hidden bg-white dark:bg-black">
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-indigo-500/5 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[color:var(--accent)]/10 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3">
+          <h2 className="text-base font-semibold uppercase tracking-wider text-[color:var(--accent)] mb-3">
             Our Leadership
           </h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-6">
             {title}
           </p>
-          <div className="w-12 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto rounded-full mb-6" />
+          <div className="w-12 h-1 bg-[color:var(--accent)] mx-auto rounded-full mb-6" />
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
             {subtitle}
           </p>
@@ -104,7 +104,7 @@ export default function Team() {
                 <h3 className="text-lg font-bold text-zinc-950 dark:text-white mb-1">
                   {member.name}
                 </h3>
-                <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4 uppercase tracking-wider">
+                <p className="text-xs font-semibold text-[color:var(--accent)] mb-4 uppercase tracking-wider">
                   {member.role}
                 </p>
 
@@ -118,7 +118,7 @@ export default function Team() {
               <div>
                 <button
                   onClick={() => openModal(member)}
-                  className="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold text-zinc-950 dark:text-white bg-zinc-200/60 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold text-zinc-950 bg-zinc-200/60 hover:bg-zinc-200 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                 >
                   Read Profile & Bio
                 </button>
@@ -129,13 +129,13 @@ export default function Team() {
 
         {/* Press/Media Contact Block */}
         <div className="mt-20 glass-panel rounded-2xl p-8 text-center max-w-2xl mx-auto shadow-sm border border-zinc-200/60 dark:border-zinc-800/60">
-          <h3 className="text-lg font-bold text-zinc-950 dark:text-white mb-2">Press & Media Inquiries</h3>
+          <h3 className="text-lg font-bold text-zinc-950 mb-2">Press & Media Inquiries</h3>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
             Are you a journalist or researcher interested in writing about our community smart labs or digital literacy studies?
           </p>
           <a
             href={`mailto:${siteConfig.contact.email}?subject=Press Inquiry - Project Sankalp`}
-            className="inline-flex items-center text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300"
+            className="inline-flex items-center text-sm font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)]"
           >
             Email Press Contact <span aria-hidden="true" className="ml-1">→</span>
           </a>
@@ -160,7 +160,7 @@ export default function Team() {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 p-1.5 rounded-full text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="absolute top-4 right-4 p-1.5 rounded-full text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
               aria-label="Close modal"
             >
               <X size={20} />
@@ -179,7 +179,7 @@ export default function Team() {
                 <h3 id="modal-title" className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white">
                   {selectedMember.name}
                 </h3>
-                <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+                <p className="text-sm font-semibold text-[color:var(--accent)] uppercase tracking-wider">
                   {selectedMember.role}
                 </p>
               </div>
@@ -199,7 +199,7 @@ export default function Team() {
                 <div className="flex flex-wrap gap-4 items-center">
                   <a
                     href={`mailto:${selectedMember.email}`}
-                    className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 rounded-lg transition-colors"
+                    className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-lg transition-colors"
                   >
                     Email {selectedMember.name.split(" ")[0]}
                   </a>

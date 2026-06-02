@@ -76,8 +76,8 @@ export default function GetInvolved() {
   };
 
   return (
-    <section id="get-involved" className="py-24 sm:py-32 relative overflow-hidden bg-zinc-50 dark:bg-zinc-950/40">
-      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
+    <section id="get-involved" className="py-24 sm:py-32 relative overflow-hidden bg-white">
+      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-[color:var(--accent)]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -105,19 +105,19 @@ export default function GetInvolved() {
             </p>
 
             {volunteerSuccess ? (
-              <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 rounded-2xl p-6 text-center animate-scale-up">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[color:var(--card)] border border-slate-100 rounded-2xl p-6 text-center animate-scale-up">
+                <div className="w-12 h-12 rounded-full bg-[color:var(--card)] text-[color:var(--accent)] flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-bold text-emerald-900 dark:text-emerald-400 mb-2">Application Received!</h4>
-                <p className="text-sm text-emerald-700 dark:text-emerald-500 leading-relaxed">
+                <h4 className="text-lg font-bold text-black mb-2">Application Received!</h4>
+                <p className="text-sm text-slate-700 leading-relaxed">
                   Thank you for applying to volunteer with Project Sankalp. Our program coordinators will review your submission and email you details within 3 business days.
                 </p>
                 <button
                   onClick={() => setVolunteerSuccess(false)}
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline focus:outline-none"
+                  className="mt-6 inline-flex items-center text-sm font-semibold text-[color:var(--accent)] hover:underline focus:outline-none"
                 >
                   Submit another application
                 </button>
@@ -135,7 +135,7 @@ export default function GetInvolved() {
                       id="volunteer-name"
                       value={volunteerForm.name}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                       placeholder="Jane Doe"
                     />
                     {volunteerErrors.name && (
@@ -155,7 +155,7 @@ export default function GetInvolved() {
                       id="volunteer-email"
                       value={volunteerForm.email}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                       placeholder="jane@example.com"
                     />
                     {volunteerErrors.email && (
@@ -177,7 +177,7 @@ export default function GetInvolved() {
                       id="volunteer-phone"
                       value={volunteerForm.phone}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                       placeholder="+91 98765 43210"
                     />
                     {volunteerErrors.phone && (
@@ -216,7 +216,7 @@ export default function GetInvolved() {
                     value={volunteerForm.message}
                     onChange={(e) => setVolunteerForm({ ...volunteerForm, message: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] resize-none"
                     placeholder="Tell us briefly about your background and programming/technical/teaching skills..."
                   />
                   {volunteerErrors.message && (
@@ -229,7 +229,7 @@ export default function GetInvolved() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 rounded-xl shadow-lg hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-xl shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] cursor-pointer"
                 >
                   Submit Application
                 </button>
@@ -242,7 +242,7 @@ export default function GetInvolved() {
             {/* Donation Placeholder Block */}
             <div className="bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-6">
+                <div className="w-10 h-10 rounded-xl bg-[color:var(--card)] text-[color:var(--accent)] flex items-center justify-center mb-6">
                   <Heart size={20} />
                 </div>
                 <h3 className="text-lg font-extrabold text-zinc-950 dark:text-white mb-2">
@@ -254,7 +254,7 @@ export default function GetInvolved() {
               </div>
               <button
                 onClick={() => setShowDonateModal(true)}
-                className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 dark:bg-rose-500 dark:hover:bg-rose-600 rounded-xl shadow-md hover:shadow-rose-500/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-500 cursor-pointer"
+                className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-xl shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] cursor-pointer"
               >
                 Donate Now
               </button>
@@ -270,8 +270,8 @@ export default function GetInvolved() {
               </p>
 
               {newsletterSuccess ? (
-                <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 rounded-2xl p-4 text-center animate-scale-up">
-                  <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-400">
+                <div className="bg-[color:var(--card)] border border-slate-100 rounded-2xl p-4 text-center animate-scale-up">
+                  <p className="text-sm font-semibold text-[color:var(--accent)]">
                     Subscribed successfully!
                   </p>
                 </div>
@@ -284,7 +284,7 @@ export default function GetInvolved() {
                       id="newsletter-email"
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                       placeholder="you@example.com"
                     />
                     {newsletterError && (
@@ -293,12 +293,12 @@ export default function GetInvolved() {
                       </p>
                     )}
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 rounded-xl shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
-                  >
-                    Subscribe
-                  </button>
+                    <button
+                      type="submit"
+                      className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-xl shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] cursor-pointer"
+                    >
+                      Subscribe
+                    </button>
                 </form>
               )}
             </div>
@@ -312,13 +312,13 @@ export default function GetInvolved() {
               <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">Email</h4>
-                  <a href={`mailto:${email}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-semibold">
+                  <a href={`mailto:${email}`} className="hover:text-[color:var(--accent)] transition-colors font-semibold">
                     {email}
                   </a>
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1">Phone</h4>
-                  <a href={`tel:${phone}`} className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-semibold">
+                  <a href={`tel:${phone}`} className="hover:text-[color:var(--accent)] transition-colors font-semibold">
                     {phone}
                   </a>
                 </div>
@@ -334,16 +334,16 @@ export default function GetInvolved() {
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">Follow Project Sankalp</h4>
                 <div className="flex gap-4">
-                  <a href={socials.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-indigo-50 hover:text-indigo-600 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-indigo-400 transition-all" aria-label="Twitter">
+                  <a href={socials.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-[color:var(--card)] hover:text-[color:var(--accent)] dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-[color:var(--accent)] transition-all" aria-label="Twitter">
                     <Twitter size={18} />
                   </a>
-                  <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-indigo-50 hover:text-indigo-600 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-indigo-400 transition-all" aria-label="LinkedIn">
+                  <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-[color:var(--card)] hover:text-[color:var(--accent)] dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-[color:var(--accent)] transition-all" aria-label="LinkedIn">
                     <Linkedin size={18} />
                   </a>
-                  <a href={socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-indigo-50 hover:text-indigo-600 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-indigo-400 transition-all" aria-label="GitHub">
+                  <a href={socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-[color:var(--card)] hover:text-[color:var(--accent)] dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-[color:var(--accent)] transition-all" aria-label="GitHub">
                     <Github size={18} />
                   </a>
-                  <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-indigo-50 hover:text-indigo-600 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-indigo-400 transition-all" aria-label="Instagram">
+                  <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 hover:bg-[color:var(--card)] hover:text-[color:var(--accent)] dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:hover:text-[color:var(--accent)] transition-all" aria-label="Instagram">
                     <Instagram size={18} />
                   </a>
                 </div>

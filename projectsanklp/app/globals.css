@@ -2,14 +2,14 @@
 
 :root {
   --background: #FFFFFF;
-  --foreground: #0F172A; /* slate-900 */
-  --card: #F8FAFC; /* slate-50 / surface */
-  --card-foreground: #0F172A;
-  --primary: #0F172A;
+  --foreground: #000000; /* pure black for highest contrast */
+  --card: #FAFBFB; /* very subtle off-white surface */
+  --card-foreground: #000000;
+  --primary: #000000; /* primary brand color -> black */
   --primary-foreground: #FFFFFF;
-  --accent: #10B981; /* emerald-500 */
+  --accent: #B5832A; /* warm premium gold accent */
   --border: #F1F5F9; /* slate-100 */
-  --text-primary: #0F172A;
+  --text-primary: #000000;
   --text-secondary: #475569;
 }
 
@@ -50,6 +50,27 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
+
+  /* Premium typography for headings */
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; }
+  h2 { font-size: clamp(1.5rem, 2.75vw, 2.25rem); font-weight: 700; }
+  h3 { font-size: clamp(1.25rem, 2.1vw, 1.5rem); font-weight: 600; }
+
+  p, li { color: var(--text-primary); line-height: 1.7; }
+
+  a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  a:hover, a:focus { text-decoration: underline; }
 }
 
 /* Smooth scrolling for anchor navigation */
@@ -85,7 +106,7 @@ html {
 /* Clean, crisp soft rounded panel helper */
 .glass-panel {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(2,6,23,0.06);
   border-radius: 1.5rem; /* rounded-3xl equivalent */
 }
 

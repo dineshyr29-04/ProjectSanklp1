@@ -8,13 +8,13 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-32 flex items-center justify-center bg-white dark:bg-[#0f172a]">
       {/* Delicate organic border lines */}
-      <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(var(--accent)_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 flex flex-col items-center">
         {/* Soft Rounded Hero Box */}
         <div className="border border-slate-100 dark:border-slate-800/80 p-8 sm:p-16 rounded-3xl bg-slate-50/50 dark:bg-slate-900/30 max-w-4xl shadow-xs">
           {/* Organization Name Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f8fafc] dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-sans font-bold border border-slate-100 dark:border-slate-700 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[color:var(--card)] text-black text-xs font-sans font-bold border border-slate-100 rounded-full mb-6">
             {siteConfig.orgName} Social Impact
           </div>
 
@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
             <Link
               href="/members"
-              className="relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-450 dark:text-slate-950 rounded-full transition-all duration-200 shadow-xs"
+              className="relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-sans font-bold tracking-wider uppercase text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-all duration-200 shadow-xs"
             >
               {/* Sweep shine element */}
               <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] translate-y-[-100%] rotate-[45deg] animate-sweep" />

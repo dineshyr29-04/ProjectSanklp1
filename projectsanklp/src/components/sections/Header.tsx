@@ -38,7 +38,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-900 dark:text-[#10b981] focus:outline-none hover:text-[#10b981] dark:hover:text-emerald-400 transition-colors"
+              className="text-xl sm:text-2xl font-serif font-black tracking-tight text-black focus:outline-none hover:text-[color:var(--accent)] transition-colors"
               aria-label={`${siteConfig.orgName} Home`}
             >
               {siteConfig.orgName}
@@ -51,7 +51,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-sans font-bold text-slate-600 hover:text-[#10b981] dark:text-slate-200 dark:hover:text-[#10b981] transition-colors duration-200 focus:outline-none px-2 py-1"
+                className="text-sm font-sans font-bold text-slate-600 hover:text-[color:var(--accent)] transition-colors duration-200 focus:outline-none px-2 py-1"
               >
                 {link.name}
               </Link>
@@ -62,7 +62,7 @@ export default function Header() {
           <div className="hidden md:flex items-center">
             <Link
               href="/members"
-              className="inline-flex items-center justify-center px-5 py-2 text-xs font-sans font-bold text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-400 dark:text-slate-950 rounded-full shadow-sm hover:shadow transition-all duration-200"
+              className="inline-flex items-center justify-center px-5 py-2 text-xs font-sans font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-full shadow-sm hover:shadow transition-all duration-200"
             >
               Join Us
             </Link>
@@ -78,11 +78,11 @@ export default function Header() {
               aria-label="Toggle navigation menu"
             >
               {isOpen ? (
-                <span className="font-sans text-xs bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-200 px-4 py-2 rounded-full font-bold transition-all border border-slate-100 dark:border-slate-800">
+                <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
                   Close Menu
                 </span>
               ) : (
-                <span className="font-sans text-xs bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-200 px-4 py-2 rounded-full font-bold transition-all border border-slate-100 dark:border-slate-800">
+                <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
                   Menu
                 </span>
               )}
@@ -93,19 +93,19 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-xs transition-opacity duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
       >
-        <div
-          className={`fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-[#0f172a] border-l border-slate-100 dark:border-slate-800 p-6 shadow-2xl transition-transform duration-300 ease-in-out ${
+          <div
+          className={`fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white border-l border-slate-100 p-6 shadow-2xl transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between mb-8">
-            <span className="text-lg font-serif font-black text-slate-900 dark:text-[#10b981]">
+            <span className="text-lg font-serif font-black text-black">
               {siteConfig.orgName}
             </span>
             <button
@@ -113,7 +113,7 @@ export default function Header() {
               className="focus:outline-none"
               aria-label="Close menu"
             >
-              <span className="font-sans text-xs bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-200 px-4 py-2 rounded-full font-bold transition-all border border-slate-100 dark:border-slate-800">
+              <span className="font-sans text-xs bg-white text-black px-4 py-2 rounded-full font-bold transition-all border border-slate-100">
                 Close
               </span>
             </button>
@@ -124,7 +124,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-base font-sans font-bold text-slate-700 hover:text-[#10b981] dark:text-slate-200 dark:hover:text-[#10b981] transition-colors py-2 block border-b border-slate-50 dark:border-slate-800"
+                className="text-base font-sans font-bold text-slate-700 hover:text-[color:var(--accent)] transition-colors py-2 block border-b border-slate-50"
               >
                 {link.name}
               </Link>
@@ -132,7 +132,7 @@ export default function Header() {
             <Link
               href="/members"
               onClick={() => setIsOpen(false)}
-              className="mt-6 w-full inline-flex items-center justify-center px-4 py-3 text-base font-sans font-bold text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-400 dark:text-slate-950 rounded-full transition-colors duration-200"
+              className="mt-6 w-full inline-flex items-center justify-center px-4 py-3 text-base font-sans font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-colors duration-200"
             >
               Join as Volunteer
             </Link>

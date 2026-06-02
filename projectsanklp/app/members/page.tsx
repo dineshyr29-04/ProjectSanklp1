@@ -80,7 +80,7 @@ export default function MembersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Join the Community</span>
+            <span className="inline-block px-3 py-1 bg-[color:var(--card)] text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Join the Community</span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-slate-900 dark:text-white mt-2 mb-4">
               Members & Volunteers
             </h1>
@@ -101,7 +101,7 @@ export default function MembersPage() {
 
               {volunteerSuccess ? (
                 <div className="border border-slate-100 bg-slate-50/50 dark:bg-slate-900/30 p-6 text-center rounded-2xl">
-                  <div className="text-sm font-sans font-bold text-slate-700 dark:text-slate-200 mb-3">
+                  <div className="text-sm font-sans font-bold text-slate-700 mb-3">
                     Application Logged Successfully
                   </div>
                   <p className="text-sm font-sans text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
@@ -109,7 +109,7 @@ export default function MembersPage() {
                   </p>
                   <button
                     onClick={() => setVolunteerSuccess(false)}
-                    className="text-xs font-sans font-bold text-[#10b981] hover:text-emerald-600 hover:underline focus:outline-none"
+                    className="text-xs font-sans font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)] hover:underline focus:outline-none"
                   >
                     Submit Another Application
                   </button>
@@ -127,7 +127,7 @@ export default function MembersPage() {
                         id="volunteer-name"
                         value={volunteerForm.name}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none rounded-xl focus:border-[#10b981] text-slate-900 dark:text-white"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 text-sm focus:outline-none rounded-xl focus:border-[color:var(--accent)] text-slate-900"
                         placeholder="Jane Doe"
                       />
                       {volunteerErrors.name && (
@@ -147,7 +147,7 @@ export default function MembersPage() {
                         id="volunteer-email"
                         value={volunteerForm.email}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none rounded-xl focus:border-[#10b981] text-slate-900 dark:text-white"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 text-sm focus:outline-none rounded-xl focus:border-[color:var(--accent)] text-slate-900"
                         placeholder="jane@example.com"
                       />
                       {volunteerErrors.email && (
@@ -169,7 +169,7 @@ export default function MembersPage() {
                         id="volunteer-phone"
                         value={volunteerForm.phone}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none rounded-xl focus:border-[#10b981] text-slate-900 dark:text-white"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 text-sm focus:outline-none rounded-xl focus:border-[color:var(--accent)] text-slate-900"
                         placeholder="+91 98765 43210"
                       />
                       {volunteerErrors.phone && (
@@ -188,7 +188,7 @@ export default function MembersPage() {
                         id="volunteer-program"
                         value={volunteerForm.program}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, program: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none rounded-xl focus:border-[#10b981] text-slate-700 dark:text-white"
+                        className="w-full px-4 py-3 bg-white border border-slate-200 text-sm focus:outline-none rounded-xl focus:border-[color:var(--accent)] text-slate-700"
                       >
                         <option value="digital-literacy">Digital Literacy Academy</option>
                         <option value="tech-mentorship">Career Accelerator Mentorship</option>
@@ -208,7 +208,7 @@ export default function MembersPage() {
                       value={volunteerForm.message}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, message: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none rounded-xl focus:border-[#10b981] text-slate-900 dark:text-white resize-none"
+                      className="w-full px-4 py-3 bg-white border border-slate-200 text-sm focus:outline-none rounded-xl focus:border-[color:var(--accent)] text-slate-900 resize-none"
                       placeholder="Briefly state your technical/teaching background and why you want to participate..."
                     />
                     {volunteerErrors.message && (
@@ -221,7 +221,7 @@ export default function MembersPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-4 text-xs font-sans font-bold tracking-wider uppercase text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-emerald-450 dark:text-slate-950 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                    className="w-full inline-flex items-center justify-center px-6 py-4 text-xs font-sans font-bold tracking-wider uppercase text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                   >
                     Submit Member Application
                   </button>
@@ -233,7 +233,7 @@ export default function MembersPage() {
             <div className="lg:col-span-5 space-y-8 font-sans">
               
               {/* Donation Details Card */}
-              <div className="border border-slate-100 dark:border-slate-800 bg-[#f8fafc] dark:bg-slate-900/30 p-8 rounded-3xl shadow-xs">
+              <div className="border border-slate-100 bg-[color:var(--card)] p-8 rounded-3xl shadow-xs">
                 <div className="text-xs font-sans font-bold text-slate-400 mb-3">
                   Co-Sponsorship
                 </div>
@@ -244,7 +244,7 @@ export default function MembersPage() {
                   Donations fund off-grid solar panels and server backup batteries. Project Sankalp is a Section 8 non-profit (tax benefit under 80G).
                 </p>
 
-                <div className="border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 p-5 rounded-2xl text-xs font-mono space-y-2 mb-6 text-slate-700 dark:text-slate-300">
+                <div className="border border-slate-100 bg-white p-5 rounded-2xl text-xs font-mono space-y-2 mb-6 text-slate-700">
                   <div className="text-center font-bold border-b border-slate-105 pb-2 text-slate-900 dark:text-white">
                     BANK DETAILS
                   </div>
@@ -260,7 +260,7 @@ export default function MembersPage() {
               </div>
 
               {/* Newsletter Subscription */}
-              <div className="border border-slate-100 dark:border-slate-800 bg-[#f8fafc] dark:bg-slate-900/30 p-8 rounded-3xl shadow-xs">
+              <div className="border border-slate-100 bg-[color:var(--card)] p-8 rounded-3xl shadow-xs">
                 <div className="text-xs font-sans font-bold text-slate-400 mb-3">
                   Join the List
                 </div>
@@ -291,7 +291,7 @@ export default function MembersPage() {
                     )}
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-sans font-bold tracking-wider uppercase text-white bg-slate-900 hover:bg-[#10b981] dark:bg-[#10b981] dark:hover:bg-[#10b981] dark:hover:text-slate-950 rounded-full transition-all duration-200 cursor-pointer"
+                      className="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-sans font-bold tracking-wider uppercase text-white bg-black hover:bg-[color:var(--accent)] rounded-full transition-all duration-200 cursor-pointer"
                     >
                       Subscribe
                     </button>
@@ -317,9 +317,9 @@ export default function MembersPage() {
           </div>
 
           {/* Section 3: Testimonials */}
-          <div className="border-t border-slate-100 dark:border-slate-800 pt-16">
+          <div className="border-t border-slate-100 pt-16">
             <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-sans font-bold text-emerald-800 dark:text-[#10b981] rounded-full">Voice Logs</span>
+              <span className="inline-block px-3 py-1 bg-[color:var(--card)] rounded-full text-xs font-sans font-bold text-[color:var(--accent)] rounded-full">Voice Logs</span>
               <h2 className="text-3xl font-serif font-black text-slate-900 dark:text-white uppercase mt-2 mb-4">
                 What Members Say
               </h2>
