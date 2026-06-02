@@ -1,29 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #091f11;
-  --card: #ffffff;
-  --card-foreground: #091f11;
-  --primary: #15803d;
-  --primary-foreground: #ffffff;
-  --muted: #f0fbf5;
-  --muted-foreground: #15803d;
-  --border: #16a34a;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050f08;
-    --foreground: #f0fbf5;
-    --card: #08160c;
-    --card-foreground: #f0fbf5;
-    --primary: #22c55e;
-    --primary-foreground: #050f08;
-    --muted: #091f11;
-    --muted-foreground: #22c55e;
-    --border: #15803d;
-  }
+  --background: #FFFFFF;
+  --foreground: #0F172A; /* slate-900 */
+  --card: #F8FAFC; /* slate-50 / surface */
+  --card-foreground: #0F172A;
+  --primary: #0F172A;
+  --primary-foreground: #FFFFFF;
+  --accent: #10B981; /* emerald-500 */
+  --border: #F1F5F9; /* slate-100 */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
 }
 
 @theme inline {
@@ -32,11 +19,27 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-primary-custom: var(--primary);
-  --color-muted-custom: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-custom: var(--accent);
+  --color-text-primary-custom: var(--text-primary);
+  --color-text-secondary-custom: var(--text-secondary);
   --color-border-custom: var(--border);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  
+  --animate-sweep: sweep 1.5s ease-in-out infinite;
+
+  @keyframes sweep {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+  }
 }
 
 /* Custom styles for accessibility and high quality UI */
@@ -56,7 +59,7 @@ html {
 
 /* Highlight focused elements for keyboard navigation access */
 *:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
 
@@ -79,14 +82,18 @@ html {
     }
 }
 
-/* Clean, crisp solid bordered panel helper */
+/* Clean, crisp soft rounded panel helper */
 .glass-panel {
   background: var(--card);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem; /* rounded-3xl equivalent */
 }
 
 .dark .glass-panel {
   background: var(--card);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
 }
+
+
 

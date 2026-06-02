@@ -76,12 +76,12 @@ export default function MembersPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#050f08] py-16 sm:py-24">
+      <main id="main-content" className="flex-grow bg-white dark:bg-[#05160c] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ JOIN THE COMMUNITY ]</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 uppercase tracking-tight mt-2 mb-4">
+            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Join the Community</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 mt-2 mb-4">
               Members & Volunteers
             </h1>
             <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300">
@@ -91,27 +91,27 @@ export default function MembersPage() {
 
           <div className="grid lg:grid-cols-12 gap-8 items-start mb-20">
             {/* Volunteer Form (Col 1-7) */}
-            <div className="lg:col-span-7 border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 p-8 sm:p-10 shadow-sm">
-              <h2 className="text-2xl font-black text-emerald-950 dark:text-emerald-100 uppercase mb-2">
-                VOLUNTEER & MEMBERSHIP APPLICATION
+            <div className="lg:col-span-7 border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] p-8 sm:p-10 rounded-3xl shadow-xs">
+              <h2 className="text-2xl font-black text-emerald-900 dark:text-emerald-100 mb-2">
+                Volunteer & Membership Application
               </h2>
-              <p className="text-xs text-emerald-900/80 dark:text-emerald-300 mb-8 font-mono">
-                [ REQUIREMENT: HIGH CONTRAST BORDER SYSTEM ACTIVE ]
+              <p className="text-xs text-emerald-700/80 mb-8 font-semibold">
+                Share your skills and build local digital literacy cohorts.
               </p>
 
               {volunteerSuccess ? (
-                <div className="border border-emerald-800 bg-emerald-50/50 dark:bg-zinc-950 p-6 text-center">
-                  <div className="font-mono text-sm font-bold text-emerald-800 dark:text-emerald-400 mb-4">
-                    [ APPLICATION LOGGED SUCCESSFULLY ]
+                <div className="border border-emerald-200 bg-emerald-50/20 dark:bg-emerald-950/20 p-6 text-center rounded-2xl">
+                  <div className="text-sm font-bold text-emerald-850 dark:text-emerald-300 mb-3">
+                    Application Logged Successfully
                   </div>
-                  <p className="text-sm text-emerald-900 dark:text-emerald-300 leading-relaxed mb-6">
+                  <p className="text-sm text-emerald-900/80 dark:text-emerald-350 leading-relaxed mb-6">
                     Our team coordinators will review your submission and email you the orientation packet details within 3 business days.
                   </p>
                   <button
                     onClick={() => setVolunteerSuccess(false)}
-                    className="font-mono text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline focus:outline-none"
+                    className="text-xs font-bold text-emerald-700 hover:text-emerald-500 hover:underline focus:outline-none"
                   >
-                    [ SUBMIT ANOTHER APPLICATION ]
+                    Submit Another Application
                   </button>
                 </div>
               ) : (
@@ -119,7 +119,7 @@ export default function MembersPage() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label htmlFor="volunteer-name" className="block text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase mb-2">
+                      <label htmlFor="volunteer-name" className="block text-xs font-bold text-emerald-800 dark:text-emerald-450 uppercase mb-2 ml-1">
                         Full Name
                       </label>
                       <input
@@ -127,19 +127,19 @@ export default function MembersPage() {
                         id="volunteer-name"
                         value={volunteerForm.name}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none focus:bg-emerald-50/10"
+                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl focus:border-emerald-500 text-emerald-950 dark:text-emerald-250"
                         placeholder="Jane Doe"
                       />
                       {volunteerErrors.name && (
-                        <p className="mt-1.5 text-xs text-red-600 font-mono" role="alert">
-                          [ ERROR: {volunteerErrors.name.toUpperCase()} ]
+                        <p className="mt-1.5 text-xs text-red-600 font-semibold" role="alert">
+                          Error: {volunteerErrors.name}
                         </p>
                       )}
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label htmlFor="volunteer-email" className="block text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase mb-2">
+                      <label htmlFor="volunteer-email" className="block text-xs font-bold text-emerald-800 dark:text-emerald-450 uppercase mb-2 ml-1">
                         Email Address
                       </label>
                       <input
@@ -147,12 +147,12 @@ export default function MembersPage() {
                         id="volunteer-email"
                         value={volunteerForm.email}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none focus:bg-emerald-50/10"
+                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl focus:border-emerald-500 text-emerald-950 dark:text-emerald-250"
                         placeholder="jane@example.com"
                       />
                       {volunteerErrors.email && (
-                        <p className="mt-1.5 text-xs text-red-600 font-mono" role="alert">
-                          [ ERROR: {volunteerErrors.email.toUpperCase()} ]
+                        <p className="mt-1.5 text-xs text-red-600 font-semibold" role="alert">
+                          Error: {volunteerErrors.email}
                         </p>
                       )}
                     </div>
@@ -161,7 +161,7 @@ export default function MembersPage() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     {/* Phone */}
                     <div>
-                      <label htmlFor="volunteer-phone" className="block text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase mb-2">
+                      <label htmlFor="volunteer-phone" className="block text-xs font-bold text-emerald-800 dark:text-emerald-450 uppercase mb-2 ml-1">
                         Phone Number
                       </label>
                       <input
@@ -169,26 +169,26 @@ export default function MembersPage() {
                         id="volunteer-phone"
                         value={volunteerForm.phone}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, phone: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none focus:bg-emerald-50/10"
+                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl focus:border-emerald-500 text-emerald-950 dark:text-emerald-250"
                         placeholder="+91 98765 43210"
                       />
                       {volunteerErrors.phone && (
-                        <p className="mt-1.5 text-xs text-red-600 font-mono" role="alert">
-                          [ ERROR: {volunteerErrors.phone.toUpperCase()} ]
+                        <p className="mt-1.5 text-xs text-red-600 font-semibold" role="alert">
+                          Error: {volunteerErrors.phone}
                         </p>
                       )}
                     </div>
 
                     {/* Preferred Program */}
                     <div>
-                      <label htmlFor="volunteer-program" className="block text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase mb-2">
+                      <label htmlFor="volunteer-program" className="block text-xs font-bold text-emerald-800 dark:text-emerald-450 uppercase mb-2 ml-1">
                         Select Program
                       </label>
                       <select
                         id="volunteer-program"
                         value={volunteerForm.program}
                         onChange={(e) => setVolunteerForm({ ...volunteerForm, program: e.target.value })}
-                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none text-emerald-950 dark:text-emerald-200"
+                        className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl focus:border-emerald-500 text-emerald-900 dark:text-emerald-250"
                       >
                         <option value="digital-literacy">Digital Literacy Academy</option>
                         <option value="tech-mentorship">Career Accelerator Mentorship</option>
@@ -200,7 +200,7 @@ export default function MembersPage() {
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="volunteer-message" className="block text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 uppercase mb-2">
+                    <label htmlFor="volunteer-message" className="block text-xs font-bold text-emerald-800 dark:text-emerald-450 uppercase mb-2 ml-1">
                       Contribution Statement
                     </label>
                     <textarea
@@ -208,12 +208,12 @@ export default function MembersPage() {
                       value={volunteerForm.message}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, message: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none resize-none"
+                      className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl focus:border-emerald-500 text-emerald-950 dark:text-emerald-250 resize-none"
                       placeholder="Briefly state your technical/teaching background and why you want to participate..."
                     />
                     {volunteerErrors.message && (
-                      <p className="mt-1.5 text-xs text-red-600 font-mono" role="alert">
-                        [ ERROR: {volunteerErrors.message.toUpperCase()} ]
+                      <p className="mt-1.5 text-xs text-red-600 font-semibold" role="alert">
+                        Error: {volunteerErrors.message}
                       </p>
                     )}
                   </div>
@@ -221,9 +221,9 @@ export default function MembersPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-4 text-xs font-mono font-bold tracking-widest uppercase text-white bg-emerald-800 hover:bg-white hover:text-emerald-800 border-2 border-emerald-800 transition-all duration-200 cursor-pointer"
+                    className="w-full inline-flex items-center justify-center px-6 py-4 text-xs font-bold tracking-wider uppercase text-white bg-emerald-700 hover:bg-emerald-600 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                   >
-                    [ SUBMIT MEMBER APPLICATION ]
+                    Submit Member Application
                   </button>
                 </form>
               )}
@@ -232,21 +232,21 @@ export default function MembersPage() {
             {/* Donation Details & newsletter & Contact Details (Col 8-12) */}
             <div className="lg:col-span-5 space-y-8">
               
-              {/* Donation Details Card - Inline Instead of Modal */}
-              <div className="border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 p-8 shadow-sm">
-                <div className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 mb-3">
-                  [ SUPPORT US ]
+              {/* Donation Details Card */}
+              <div className="border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] p-8 rounded-3xl shadow-xs">
+                <div className="text-xs font-bold text-emerald-600 mb-3">
+                  Co-Sponsorship
                 </div>
-                <h3 className="text-xl font-black text-emerald-950 dark:text-emerald-100 uppercase mb-4">
-                  FINANCIAL CO-SPONSORSHIP
+                <h3 className="text-xl font-black text-emerald-900 dark:text-emerald-100 uppercase mb-4">
+                  Financial Support
                 </h3>
-                <p className="text-xs text-emerald-900/80 dark:text-emerald-300 leading-relaxed mb-6">
+                <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed mb-6">
                   Donations fund off-grid solar panels and server backup batteries. Project Sankalp is a Section 8 non-profit (tax benefit under 80G).
                 </p>
 
-                <div className="border border-emerald-800/20 bg-emerald-50/30 dark:bg-zinc-950 p-4 text-xs font-mono space-y-2 mb-6 text-emerald-900 dark:text-emerald-300">
-                  <div className="text-center font-bold border-b border-emerald-800/10 pb-2">
-                    [ STATE BANK OF INDIA DETAILS ]
+                <div className="border border-emerald-100 dark:border-emerald-950 bg-emerald-50/20 dark:bg-zinc-950/40 p-5 rounded-2xl text-xs font-mono space-y-2 mb-6 text-emerald-900 dark:text-emerald-300">
+                  <div className="text-center font-bold border-b border-emerald-100/35 pb-2 text-emerald-800 dark:text-emerald-400">
+                    BANK DETAILS
                   </div>
                   <div>ACCOUNT NAME: PROJECT SANKALP FOUNDATION</div>
                   <div>ACCOUNT NUMBER: 98765432109</div>
@@ -254,26 +254,26 @@ export default function MembersPage() {
                   <div>UPI ADDRESS: sankalp@sbi</div>
                 </div>
 
-                <div className="text-[10px] font-mono text-emerald-800 dark:text-emerald-400">
-                  [ Send receipts to: info@projectsankalp.org ]
+                <div className="text-[10px] font-semibold text-emerald-600">
+                  Send receipts to: info@projectsankalp.org
                 </div>
               </div>
 
               {/* Newsletter Subscription */}
-              <div className="border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 p-8 shadow-sm">
-                <div className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 mb-3">
-                  [ JOIN THE LIST ]
+              <div className="border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] p-8 rounded-3xl shadow-xs">
+                <div className="text-xs font-bold text-emerald-600 mb-3">
+                  Join the List
                 </div>
-                <h3 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mb-2">
-                  NEWSLETTER SUBSCRIPTION
+                <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 uppercase mb-2">
+                  Newsletter Updates
                 </h3>
-                <p className="text-xs text-emerald-900/80 dark:text-emerald-300 mb-6 leading-relaxed">
+                <p className="text-xs text-emerald-900/80 dark:text-emerald-350 mb-6 leading-relaxed">
                   Receive monthly project brief summaries and updates.
                 </p>
 
                 {newsletterSuccess ? (
-                  <div className="border border-emerald-800 bg-emerald-50/50 p-4 text-center font-mono text-xs font-bold text-emerald-800">
-                    [ SUBSCRIBED SUCCESSFULLY ]
+                  <div className="border border-emerald-250 bg-emerald-50/20 p-4 text-center rounded-xl text-xs font-bold text-emerald-800">
+                    Subscribed Successfully
                   </div>
                 ) : (
                   <form onSubmit={handleNewsletterSubmit} className="space-y-4">
@@ -281,31 +281,31 @@ export default function MembersPage() {
                       type="email"
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border-2 border-emerald-800 dark:border-emerald-500 text-sm focus:outline-none"
+                      className="w-full px-4 py-3 bg-white dark:bg-zinc-950 border border-emerald-250 dark:border-emerald-900 text-sm focus:outline-none rounded-xl"
                       placeholder="you@example.com"
                     />
                     {newsletterError && (
-                      <p className="text-xs text-red-600 font-mono" role="alert">
-                        [ ERROR: {newsletterError.toUpperCase()} ]
+                      <p className="text-xs text-red-600 font-semibold" role="alert">
+                        Error: {newsletterError}
                       </p>
                     )}
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-mono font-bold tracking-widest uppercase text-white bg-emerald-800 hover:bg-white hover:text-emerald-800 border-2 border-emerald-800 transition-all duration-200 cursor-pointer"
+                      className="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-bold tracking-wider uppercase text-white bg-emerald-700 hover:bg-emerald-600 rounded-full transition-all duration-200 cursor-pointer"
                     >
-                      [ SUBSCRIBE ]
+                      Subscribe
                     </button>
                   </form>
                 )}
               </div>
 
               {/* HQ details */}
-              <div className="border border-emerald-800/30 bg-white dark:bg-zinc-900 p-8 text-xs font-mono space-y-4 text-emerald-950 dark:text-emerald-300">
-                <div className="font-bold border-b border-emerald-800/10 pb-2">
-                  [ HEADQUARTERS ADDRESS ]
+              <div className="border border-emerald-100/50 bg-white dark:bg-[#062210] p-8 rounded-3xl text-xs font-mono space-y-4 text-emerald-900 dark:text-emerald-305">
+                <div className="font-bold border-b border-emerald-100/35 pb-2 text-emerald-850 dark:text-emerald-450">
+                  HEADQUARTERS ADDRESS
                 </div>
                 <div>{address}</div>
-                <div className="pt-2 border-t border-emerald-800/10">
+                <div className="pt-2 border-t border-emerald-100/35">
                   <span className="font-bold">EMAIL:</span> {email}
                 </div>
                 <div>
@@ -317,9 +317,9 @@ export default function MembersPage() {
           </div>
 
           {/* Section 3: Testimonials */}
-          <div className="border-t-2 border-emerald-800 dark:border-emerald-500 pt-16">
+          <div className="border-t border-emerald-100 dark:border-emerald-950/20 pt-16">
             <div className="text-center mb-12">
-              <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ VOICE LOGS ]</span>
+              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Voice Logs</span>
               <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 uppercase mt-2 mb-4">
                 What Members Say
               </h2>
@@ -329,17 +329,17 @@ export default function MembersPage() {
               {testimonials.map((t, index) => (
                 <div 
                   key={index}
-                  className="border-2 border-emerald-800 dark:border-emerald-500 p-8 bg-white dark:bg-zinc-900 flex flex-col justify-between"
+                  className="border border-emerald-100 dark:border-[#0f766e]/30 p-8 rounded-3xl bg-white dark:bg-[#062210] flex flex-col justify-between shadow-xs"
                 >
-                  <p className="text-sm italic text-emerald-950 dark:text-emerald-200 leading-relaxed mb-6">
+                  <p className="text-sm italic text-emerald-950 dark:text-emerald-250 leading-relaxed mb-6">
                     “{t.quote}”
                   </p>
                   <div>
-                    <h4 className="text-sm font-black text-emerald-800 dark:text-emerald-400 uppercase">
+                    <h4 className="text-sm font-bold text-emerald-800 dark:text-emerald-400">
                       {t.author}
                     </h4>
-                    <p className="text-xs text-emerald-900/60 dark:text-emerald-400/60 font-mono">
-                      [ {t.info.toUpperCase()} ]
+                    <p className="text-xs text-emerald-900/60 dark:text-emerald-455 font-mono">
+                      {t.info}
                     </p>
                   </div>
                 </div>

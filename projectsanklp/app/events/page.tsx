@@ -15,14 +15,14 @@ export default function EventsPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#050f08] py-16 sm:py-24">
+      <main id="main-content" className="flex-grow bg-white dark:bg-[#05160c] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section 1: Events Log / Gallery Stories */}
           <div className="mb-20">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ LOGGED EVENTS ]</span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 uppercase tracking-tight mt-2 mb-4">
+              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Logged Events</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 mt-2 mb-4">
                 {galleryTitle}
               </h1>
               <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300">
@@ -30,36 +30,33 @@ export default function EventsPage() {
               </p>
             </div>
 
-            {/* Bordered Events Log Grid */}
+            {/* Rounded Events Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {stories.map((story, index) => (
                 <div 
                   key={index}
-                  className="border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 flex flex-col justify-between"
+                  className="border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow"
                 >
-                  {/* Text-based thumbnail placeholder with clean typography instead of SVGs */}
-                  <div className="border-b-2 border-emerald-800 dark:border-emerald-500 bg-emerald-50/50 dark:bg-zinc-950 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
-                    <div className="font-mono text-xs font-black text-emerald-800 dark:text-emerald-400">
-                      [ EVENT #{index + 1} ]<br />
-                      {story.category.toUpperCase()}
+                  {/* Soft background header */}
+                  <div className="bg-emerald-50/30 dark:bg-[#062e15]/20 p-8 flex items-center justify-center text-center select-none min-h-[140px]">
+                    <div className="text-xs font-bold text-emerald-800 dark:text-emerald-400">
+                      Event #{index + 1}
                     </div>
                   </div>
 
-                  <div className="p-6 flex-grow flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-400 block mb-1">
-                        [ CATEGORY: {story.category.toUpperCase()} ]
-                      </span>
-                      <h2 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mb-3">
-                        {story.title}
-                      </h2>
-                      <p className="text-xs text-emerald-900/85 dark:text-emerald-300 leading-relaxed mb-4">
-                        {story.description}
-                      </p>
-                    </div>
+                  <div className="p-6">
+                    <span className="inline-block px-2.5 py-0.5 bg-emerald-50 dark:bg-[#062e15] rounded-full text-[10px] font-bold text-emerald-800 dark:text-emerald-400 mb-3">
+                      {story.category}
+                    </span>
+                    <h2 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-3">
+                      {story.title}
+                    </h2>
+                    <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed mb-4">
+                      {story.description}
+                    </p>
                     
-                    <div className="border-t border-emerald-800/10 pt-4 text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-400">
-                      [ DIGITAL RECORD: OK ]
+                    <div className="border-t border-emerald-100 dark:border-emerald-950/20 pt-4 text-[10px] font-bold text-emerald-600">
+                      Active Digital Record
                     </div>
                   </div>
                 </div>
@@ -68,24 +65,24 @@ export default function EventsPage() {
           </div>
 
           {/* Section 2: Timeline History Milestones */}
-          <div className="border-t-2 border-emerald-800 dark:border-emerald-500 pt-16">
+          <div className="border-t border-emerald-100 dark:border-emerald-950/20 pt-16">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ PROJECT LOGS ]</span>
-              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 uppercase mt-2 mb-4">
-                {historyTitle} - OUR CHRONOLOGY
+              <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-350">Project Logs</span>
+              <h2 className="text-3xl font-black text-emerald-950 dark:text-emerald-100 mt-2 mb-4">
+                {historyTitle} - Our Chronology
               </h2>
             </div>
 
-            <div className="max-w-3xl mx-auto border-l-2 border-emerald-800 dark:border-emerald-500 pl-6 sm:pl-10 space-y-12 relative">
+            <div className="max-w-3xl mx-auto border-l-2 border-emerald-150 dark:border-emerald-900/40 pl-6 sm:pl-10 space-y-12 relative">
               {history.map((event, index) => (
                 <div key={index} className="relative group">
-                  {/* Custom Border Marker instead of dot or icon */}
-                  <span className="absolute -left-[35px] sm:-left-[51px] top-1.5 font-mono text-xs font-bold bg-white dark:bg-zinc-900 border-2 border-emerald-800 dark:border-emerald-500 text-emerald-800 dark:text-emerald-400 px-1 py-0.5 z-10 select-none">
-                    [{event.year}]
+                  {/* Rounded Year Badge */}
+                  <span className="absolute -left-[35px] sm:-left-[51px] top-1 text-xs font-bold bg-emerald-700 text-white dark:bg-emerald-600 dark:text-[#05160c] px-2.5 py-1 rounded-full z-10 select-none shadow-sm">
+                    {event.year}
                   </span>
 
-                  <div className="border border-emerald-800/30 dark:border-emerald-500/40 p-6 bg-white dark:bg-zinc-900 shadow-sm hover:border-emerald-800 dark:hover:border-emerald-500 transition-colors">
-                    <h3 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mb-2">
+                  <div className="border border-emerald-100 dark:border-[#0f766e]/20 p-6 rounded-2xl bg-white dark:bg-[#062210] shadow-xs hover:border-emerald-300 dark:hover:border-emerald-650 transition-colors">
+                    <h3 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-2">
                       {event.title}
                     </h3>
                     <p className="text-sm text-emerald-900/80 dark:text-emerald-300 leading-relaxed">

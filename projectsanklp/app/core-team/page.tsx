@@ -23,12 +23,12 @@ export default function CoreTeamPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow bg-white dark:bg-[#050f08] py-16 sm:py-24">
+      <main id="main-content" className="flex-grow bg-white dark:bg-[#05160c] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ LEADERSHIP ]</span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 uppercase tracking-tight mt-2 mb-4">
+            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Leadership</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 dark:text-emerald-100 mt-2 mb-4">
               {title}
             </h1>
             <p className="text-sm sm:text-base text-emerald-900/80 dark:text-emerald-300">
@@ -41,35 +41,35 @@ export default function CoreTeamPage() {
             {members.map((member, index) => (
               <div 
                 key={index}
-                className="border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 flex flex-col justify-between"
+                className="border border-emerald-100 dark:border-[#0f766e]/30 bg-white dark:bg-[#062210] rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <div>
-                  {/* Square Avatar Box with initials and double borders */}
-                  <div className="border-b-2 border-emerald-800 dark:border-emerald-500 bg-emerald-50/40 dark:bg-zinc-950 p-8 flex items-center justify-center select-none">
-                    <div className="w-16 h-16 border-2 border-emerald-800 dark:border-emerald-500 bg-white dark:bg-zinc-900 flex items-center justify-center font-mono text-xl font-black text-emerald-800 dark:text-emerald-400">
+                  {/* Circle Avatar Box */}
+                  <div className="bg-emerald-50/20 dark:bg-[#062e15]/20 p-8 flex items-center justify-center select-none border-b border-emerald-100 dark:border-emerald-950/20">
+                    <div className="w-16 h-16 rounded-full border border-emerald-250 dark:border-emerald-850 bg-white dark:bg-zinc-950 flex items-center justify-center font-mono text-xl font-black text-emerald-800 dark:text-emerald-400 shadow-sm">
                       {getInitials(member.name)}
                     </div>
                   </div>
 
                   <div className="p-6">
-                    <span className="text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-400 block mb-1">
-                      [ ROLE: {member.role.toUpperCase()} ]
+                    <span className="inline-block px-2.5 py-0.5 bg-emerald-50 dark:bg-[#062e15] rounded-full text-[10px] font-bold text-emerald-800 dark:text-emerald-400 mb-3">
+                      {member.role}
                     </span>
-                    <h2 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mb-3">
+                    <h2 className="text-lg font-black text-emerald-900 dark:text-emerald-100 mb-3">
                       {member.name}
                     </h2>
-                    <p className="text-xs text-emerald-900/80 dark:text-emerald-300 leading-relaxed mb-4">
+                    <p className="text-xs text-emerald-900/80 dark:text-emerald-350 leading-relaxed">
                       {member.bio}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 border-t border-emerald-800/10 bg-emerald-50/10">
+                <div className="p-6 border-t border-emerald-100 dark:border-emerald-950/20 bg-emerald-50/10">
                   <a
                     href={`mailto:${member.email}`}
-                    className="w-full inline-flex items-center justify-center px-4 py-2 bg-white dark:bg-zinc-900 hover:bg-[#15803d] hover:text-white text-emerald-800 dark:text-emerald-400 border border-emerald-800 dark:border-emerald-500 text-xs font-mono font-bold uppercase transition-all"
+                    className="w-full inline-flex items-center justify-center px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-full text-xs font-bold transition-all shadow-xs"
                   >
-                    [ CONTACT EMAIL ]
+                    Contact Email
                   </a>
                 </div>
               </div>
@@ -77,17 +77,17 @@ export default function CoreTeamPage() {
           </div>
 
           {/* Direct Press / Media Block */}
-          <div className="border border-emerald-800/30 p-8 text-center max-w-2xl mx-auto bg-white dark:bg-zinc-900">
-            <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">[ MEDIA & INQUIRIES ]</span>
-            <h3 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mt-2 mb-2">PRESS CONTACT OFFICE</h3>
-            <p className="text-xs text-emerald-900/80 dark:text-emerald-300 mb-4 leading-relaxed">
-              Are you a journalist or researcher interested in writing about our community smart labs or digital literacy studies?
+          <div className="border border-emerald-100 dark:border-[#0f766e]/30 p-8 rounded-3xl text-center max-w-2xl mx-auto bg-white dark:bg-[#062210] shadow-xs">
+            <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-[#062e15] rounded-full text-xs font-bold text-emerald-800 dark:text-emerald-300">Media & Inquiries</span>
+            <h3 className="text-lg font-black text-emerald-950 dark:text-emerald-100 uppercase mt-3 mb-2">Press Contact Office</h3>
+            <p className="text-xs text-emerald-900/80 dark:text-emerald-350 mb-4 leading-relaxed">
+              Are you a researcher or journalist interested in writing about our community smart labs or digital literacy studies?
             </p>
             <a
               href={`mailto:${siteConfig.contact.email}?subject=Press Inquiry - Project Sankalp`}
-              className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400 hover:underline"
+              className="text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline"
             >
-              [ EMAIL PRESS OFFICE: {siteConfig.contact.email} ]
+              Email Press Office: {siteConfig.contact.email}
             </a>
           </div>
 
