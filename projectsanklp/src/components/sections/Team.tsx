@@ -54,11 +54,12 @@ export default function Team() {
 
   // Generate unique gradient color based on name length/letters
   const getGradient = (name: string) => {
+    const a = "[color:var(--accent)]";
     const gradients = [
-      "from-indigo-500 to-purple-600",
-      "from-blue-500 to-indigo-600",
-      "from-amber-400 to-orange-600",
-      "from-violet-500 to-purple-700",
+      `from-${a}/10 to-${a}/30`,
+      `from-${a}/5 to-zinc-600`,
+      `from-${a}/10 to-zinc-700`,
+      `from-${a}/15 to-${a}/35`,
     ];
     const index = name.length % gradients.length;
     return gradients[index];
@@ -208,6 +209,7 @@ export default function Team() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-indigo-600 dark:text-zinc-300 dark:hover:text-indigo-400"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-[color:var(--accent)] dark:text-zinc-300 dark:hover:text-[color:var(--accent)]"
                     aria-label={`${selectedMember.name}'s LinkedIn profile`}
                   >
                     <Linkedin size={16} />

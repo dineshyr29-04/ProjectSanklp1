@@ -82,13 +82,13 @@ export default function GetInvolved() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3">
+          <h2 className="text-base font-semibold uppercase tracking-wider text-[color:var(--accent)] mb-3">
             Collaborate With Us
           </h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-6">
             Ways to Get Involved
           </p>
-          <div className="w-12 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto rounded-full mb-6" />
+          <div className="w-12 h-1 bg-[color:var(--accent)] mx-auto rounded-full mb-6" />
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
             Join hands with Project Sankalp to create digital pathways and technical mentors in underserved areas.
           </p>
@@ -196,7 +196,7 @@ export default function GetInvolved() {
                       id="volunteer-program"
                       value={volunteerForm.program}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, program: e.target.value })}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-zinc-700 dark:text-zinc-300"
+                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] text-zinc-700 dark:text-zinc-300"
                     >
                       <option value="digital-literacy">Digital Literacy Academy</option>
                       <option value="tech-mentorship">Career Accelerator Mentorship</option>
@@ -254,7 +254,7 @@ export default function GetInvolved() {
               </div>
               <button
                 onClick={() => setShowDonateModal(true)}
-                className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-xl shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] cursor-pointer"
+                    className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-bold text-white bg-black hover:bg-[color:var(--accent)] rounded-xl shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] cursor-pointer"
               >
                 Donate Now
               </button>
@@ -377,7 +377,7 @@ export default function GetInvolved() {
 
             {/* Content */}
             <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-full bg-[color:var(--card)] text-[color:var(--accent)] flex items-center justify-center mx-auto mb-4">
                 <Heart size={24} />
               </div>
               <h3 id="donate-modal-title" className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white mb-2">
@@ -407,7 +407,7 @@ export default function GetInvolved() {
               </div>
 
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                Please email a copy of your bank transaction receipt to <a href={`mailto:${email}`} className="text-indigo-600 dark:text-indigo-400 hover:underline">{email}</a> to receive your 80G tax tax deduction certificate.
+                Please email a copy of your bank transaction receipt to <a href={`mailto:${email}`} className="text-[color:var(--accent)] hover:underline">{email}</a> to receive your 80G tax tax deduction certificate.
               </p>
             </div>
           </div>

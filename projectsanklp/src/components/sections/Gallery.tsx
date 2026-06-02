@@ -69,15 +69,17 @@ export default function Gallery() {
 
   // Generate stylized graphic background for gallery items (as high-fidelity digital art placeholders)
   const getCardStyle = (category: string) => {
+    // Use the single premium accent palette for gradients to keep a cohesive look
+    const a = "[color:var(--accent)]";
     switch (category.toLowerCase()) {
       case "lab openings":
-        return "from-violet-600 via-indigo-700 to-indigo-900";
+        return `from-${a}/10 via-${a}/20 to-${a}/35`;
       case "mentorship":
-        return "from-indigo-600 via-purple-700 to-pink-900";
+        return `from-${a}/10 via-${a}/20 to-${a}/35`;
       case "workshops":
-        return "from-teal-600 via-emerald-700 to-emerald-900";
+        return `from-${a}/10 via-${a}/20 to-${a}/35`;
       case "graduation":
-        return "from-blue-600 via-indigo-700 to-purple-900";
+        return `from-${a}/10 via-${a}/20 to-${a}/35`;
       default:
         return "from-zinc-800 to-zinc-950";
     }
@@ -122,18 +124,18 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-24 sm:py-32 relative overflow-hidden bg-white dark:bg-black">
-      <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[color:var(--accent)]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3">
+          <h2 className="text-base font-semibold uppercase tracking-wider text-[color:var(--accent)] mb-3">
             In Action
           </h2>
           <h3 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-6">
             {title}
           </h3>
-          <div className="w-12 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto rounded-full mb-6" />
+          <div className="w-12 h-1 bg-[color:var(--accent)] mx-auto rounded-full mb-6" />
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
             {subtitle}
           </p>
@@ -145,11 +147,11 @@ export default function Gallery() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-                activeCategory === cat
-                  ? "bg-indigo-600 text-white shadow-sm dark:bg-indigo-500"
-                  : "bg-zinc-100 hover:bg-zinc-200/80 text-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:text-zinc-300"
-              }`}
+              className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 ${
+                  activeCategory === cat
+                    ? "bg-[color:var(--card)] text-[color:var(--accent)] shadow-sm"
+                    : "bg-zinc-100 hover:bg-zinc-200/80 text-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:text-zinc-300"
+                }`}
             >
               {cat}
             </button>
@@ -168,7 +170,7 @@ export default function Gallery() {
               aria-label={`View details of ${story.title}`}
             >
               {/* High fidelity background graphics */}
-              <div
+                <div
                 className={`w-full aspect-[4/3] bg-gradient-to-br ${getCardStyle(
                   story.category
                 )} flex items-center justify-center relative transition-transform duration-500 group-hover:scale-105`}
@@ -181,7 +183,7 @@ export default function Gallery() {
 
               {/* Text Card overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-[10px] font-extrabold tracking-wider uppercase text-indigo-400 mb-1">
+                <span className="text-[10px] font-extrabold tracking-wider uppercase text-[color:var(--accent)] mb-1">
                   {story.category}
                 </span>
                 <h4 className="text-base font-bold text-white mb-2 leading-tight">
@@ -194,7 +196,7 @@ export default function Gallery() {
 
               {/* Static visual layout for keyboards / fallback */}
               <div className="p-5 bg-white dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800/80 group-hover:hidden">
-                <span className="text-[10px] font-bold tracking-wider uppercase text-indigo-600 dark:text-indigo-400 block mb-1">
+                <span className="text-[10px] font-bold tracking-wider uppercase text-[color:var(--accent)] block mb-1">
                   {story.category}
                 </span>
                 <h4 className="text-sm font-bold text-zinc-950 dark:text-white line-clamp-1 mb-1">
@@ -248,7 +250,7 @@ export default function Gallery() {
 
               {/* Text Info */}
               <div className="md:col-span-5 text-left text-white">
-                <span className="inline-block px-3 py-1 rounded-full bg-indigo-950/40 text-xs font-semibold text-indigo-400 border border-indigo-900/50 mb-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-[color:var(--card)] text-xs font-semibold text-[color:var(--accent)] border border-zinc-100 mb-4">
                   {currentLightboxStory.category}
                 </span>
                 <h3 id="lightbox-title" className="text-2xl font-extrabold text-white mb-4 leading-tight">
@@ -262,14 +264,14 @@ export default function Gallery() {
                 <div className="flex gap-2">
                   <button
                     onClick={prevStory}
-                    className="p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white border border-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white border border-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                     aria-label="Previous story"
                   >
                     <span className="rotate-180 inline-block"><ChevronRight size={18} /></span>
                   </button>
                   <button
                     onClick={nextStory}
-                    className="p-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="p-2.5 rounded-xl bg-black hover:bg-zinc-900 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)]"
                     aria-label="Next story"
                   >
                     <ChevronRight size={18} />
