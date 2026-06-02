@@ -208,8 +208,7 @@ export default function Team() {
                     href={selectedMember.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-indigo-600 dark:text-zinc-300 dark:hover:text-indigo-400"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-[color:var(--accent)] dark:text-zinc-300 dark:hover:text-[color:var(--accent)]"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-[color:var(--accent)] dark:text-zinc-300 dark:hover:text-[color:var(--accent)]"
                     aria-label={`${selectedMember.name}'s LinkedIn profile`}
                   >
                     <Linkedin size={16} />
