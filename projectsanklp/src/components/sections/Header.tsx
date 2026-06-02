@@ -21,7 +21,6 @@ export default function Header() {
     { name: "Events", href: "/events" },
     { name: "Members", href: "/members" },
     { name: "Partners", href: "/partners" },
-    { name: "Core Team", href: "/core-team" },
   ];
 
   return (
